@@ -14,7 +14,7 @@ class Subdiario:
         for line in lines:
             for invoice_tax in line.invoice_taxes:
                 if type in invoice_tax.tax.name \
-                        and invoice_tax.tax.group.name == group_tax:
+                        and invoice_tax.tax.group.code == group_tax:
                     amount = invoice_tax.amount
                     break
         return amount
@@ -53,7 +53,7 @@ class Subdiario:
         for key, values in impuestos_lst:
             if key:
                 for impuesto in values:
-                    if 'PERCEPCION' in impuesto.tax.group.name:
+                    if 'PERCEPCION' in impuesto.tax.group.code:
                         zona = impuesto.tax.name
         return zona
 
