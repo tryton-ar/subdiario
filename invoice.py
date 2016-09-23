@@ -116,7 +116,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
-            ('type', 'in', ['in_invoice', 'in_credit_note']),
+            ('type', '=', 'in'),
             ('invoice_date', '>=', data['from_date']),
             ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
@@ -217,7 +217,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
-            ('type', '=', 'out_invoice'),
+            ('type', '=', 'out'),
             ('invoice_date', '>=', data['from_date']),
             ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
@@ -281,7 +281,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
-            ('type', 'in', ['out_invoice', 'out_credit_note']),
+            ('type', '=', 'out'),
             ('invoice_date', '>=', data['from_date']),
             ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
@@ -348,7 +348,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
-            ('type', 'in', ['out_invoice', 'out_credit_note']),
+            ('type', '=', 'out'),
             ('invoice_date', '>=', data['from_date']),
             ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
