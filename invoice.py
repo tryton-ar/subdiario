@@ -179,9 +179,11 @@ class SubdiarioSaleStart(ModelView):
             ('pos_type', '=', 'electronic'),
             ('pyafipws_electronic_invoice_service', '=', 'wsfe'),
         ])
-        if pos == []:
-            pos = ''
-        return pos[0].id
+        if pos != []:
+            pos = pos[0].id
+        else:
+            pos = None
+        return pos
 
 
 class SubdiarioSale(Wizard):
