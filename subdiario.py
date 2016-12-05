@@ -6,7 +6,7 @@
 from decimal import Decimal
 
 
-class Subdiario:
+class Subdiario(object):
 
     @classmethod
     def get_iva(cls, lines, type, group_tax='IVA'):
@@ -14,10 +14,34 @@ class Subdiario:
         for line in lines:
             for invoice_tax in line.invoice_taxes:
                 if type in invoice_tax.tax.name \
-                        and invoice_tax.tax.group.code == group_tax:
+                   and group_tax.lower() in invoice_tax.tax.group.code.lower():
                     amount = invoice_tax.amount
                     break
         return amount
+
+    @classmethod
+    def get_iibb(cls, invoice, group_tax='iibb'):
+        amount = Decimal('0')
+        for invoice_tax in invoice.taxes:
+            if invoice_tax.tax.group:
+                if 'iibb' in invoice_tax.tax.group.code.lower():
+                    amount = invoice_tax.amount
+                    break
+            else:
+                raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
+        return amount
+
+    @classmethod
+    def get_iibb_name(cls, invoice, group_tax='iibb'):
+        name = ''
+        for invoice_tax in invoice.taxes:
+            if invoice_tax.tax.group:
+                if 'iibb' in invoice_tax.tax.rec_name.lower():
+                    name = invoice_tax.tax.rec_name
+                    break
+            else:
+                raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
+        return name
 
     @classmethod
     def get_account(cls, lines):
@@ -53,7 +77,7 @@ class Subdiario:
         for key, values in impuestos_lst:
             if key:
                 for impuesto in values:
-                    if 'PERCEPCION' in impuesto.tax.group.code:
+                    if 'percepcion' in impuesto.tax.group.code.lower():
                         zona = impuesto.tax.name
         return zona
 
