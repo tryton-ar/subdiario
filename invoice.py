@@ -86,7 +86,7 @@ class SubdiarioPurchaseStart(ModelView):
 
 
 class SubdiarioPurchase(Wizard):
-    'Post Invoices'
+    'SubdiarioPurchase '
     __name__ = 'subdiario.purchase'
     start = StateView('subdiario.purchase.start',
         'subdiario.purchase_start_view_form', [
@@ -105,6 +105,7 @@ class SubdiarioPurchase(Wizard):
 
 
 class SubdiarioPurchaseReport(Report, Subdiario):
+    'SubdiarioPurchaseReport'
     __name__ = 'subdiario.purchase_report'
 
     @classmethod
@@ -205,6 +206,7 @@ class SubdiarioSale(Wizard):
 
 
 class SubdiarioSaleReport(Report, Subdiario):
+    'SubdiarioSaleReport'
     __name__ = 'subdiario.sale_report'
 
     @classmethod
@@ -239,6 +241,8 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['format_tipo_comprobante'] = cls.format_tipo_comprobante
         report_context['get_iva'] = cls.get_iva
         report_context['get_account'] = cls.get_account
+        report_context['get_iibb'] = cls.get_iibb
+        report_context['get_iibb_name'] = cls.get_iibb_name
         return report_context
 
     @classmethod
@@ -248,7 +252,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 
 
 class SubdiarioSaleType(Wizard):
-    'Post Invoices'
+    'SubdiarioSaleType'
     __name__ = 'subdiario.sale.type'
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
@@ -268,6 +272,7 @@ class SubdiarioSaleType(Wizard):
 
 
 class SubdiarioSaleTypeReport(Report, Subdiario):
+    'SubdiarioSaleTypeReport'
     __name__ = 'subdiario.sale_type_report'
 
     @classmethod
@@ -307,6 +312,8 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         report_context['format_tipo_comprobante'] = cls.format_tipo_comprobante
         report_context['get_iva'] = cls.get_iva
         report_context['get_account'] = cls.get_account
+        report_context['get_iibb'] = cls.get_iibb
+        report_context['get_iibb_name'] = cls.get_iibb_name
         return report_context
 
     @classmethod
@@ -375,6 +382,8 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         report_context['format_tipo_comprobante'] = cls.format_tipo_comprobante
         report_context['get_iva'] = cls.get_iva
         report_context['get_account'] = cls.get_account
+        report_context['get_iibb'] = cls.get_iibb
+        report_context['get_iibb_name'] = cls.get_iibb_name
         return report_context
 
     @classmethod
