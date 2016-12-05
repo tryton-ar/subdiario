@@ -4,18 +4,20 @@
 # the full copyright notices and license terms.
 
 from decimal import Decimal
+from trytond.pool import Pool
 
 
 class Subdiario(object):
 
     @classmethod
     def get_iva(cls, lines, type, group_tax='IVA'):
+        Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for line in lines:
             for invoice_tax in line.invoice_taxes:
                 if type in invoice_tax.tax.name \
                    and group_tax.lower() in invoice_tax.tax.group.code.lower():
-                    amount = invoice_tax.amount
+                    amount = Currency.round(line.invoice.currency, invoice_tax.amount)
                     break
         return amount
 
@@ -25,7 +27,7 @@ class Subdiario(object):
         for invoice_tax in invoice.taxes:
             if invoice_tax.tax.group:
                 if 'iibb' in invoice_tax.tax.group.code.lower():
-                    amount = invoice_tax.amount
+                    amount = invoice.currency.round(invoice_tax.amount)
                     break
             else:
                 raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
@@ -42,6 +44,35 @@ class Subdiario(object):
             else:
                 raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
         return name
+
+    @classmethod
+    def get_sum_neto_by_tax(cls, tax, invoices):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice in invoices:
+            for invoice_tax in invoice.taxes:
+                if invoice_tax.tax == tax:
+                    if invoice.currency.id != invoice.company.id:
+                        amount += Currency.compute(
+                            invoice.currency, invoice.untaxed_amount, invoice.company.currency)
+                    else:
+                        amount += invoice.currency.round(invoice.untaxed_amount)
+        return amount
+
+    @classmethod
+    def get_sum_percibido_by_tax(cls, tax, invoices):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice in invoices:
+            for invoice_tax in invoice.taxes:
+                if invoice_tax.tax == tax:
+                    if invoice.currency.id != invoice.company.id:
+                        amount += Currency.compute(
+                            invoice.currency, invoice_tax.amount, invoice.company.currency)
+                    else:
+                        amount += invoice.currency.round(invoice_tax.amount)
+        return amount
+
 
     @classmethod
     def get_account(cls, lines):
