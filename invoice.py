@@ -112,6 +112,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
     def get_context(cls, records, data):
         pool = Pool()
         Invoice = pool.get('account.invoice')
+        Tax = pool.get('account.tax')
         Company = pool.get('company.company')
         total_amount = Decimal('0')
 
@@ -122,6 +123,11 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
         ], order=[('invoice_date', 'ASC')])
+
+        taxes = Tax.search([
+            ('group.kind', 'in', ['purchase', 'both']),
+        ], order=[('name', 'ASC')])
+
 
         company = Company(data['company'])
         for invoice in invoices:
@@ -140,6 +146,10 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         report_context['get_zona_iibb'] = cls.get_zona_iibb
         report_context['get_concepto'] = cls.get_concepto
         report_context['get_account'] = cls.get_account
+        report_context['taxes'] = taxes
+        report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
+        report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
+
         return report_context
 
     @classmethod
@@ -213,6 +223,7 @@ class SubdiarioSaleReport(Report, Subdiario):
     def get_context(cls, records, data):
         pool = Pool()
         Invoice = pool.get('account.invoice')
+        Tax = pool.get('account.tax')
         Company = pool.get('company.company')
         Pos = pool.get('account.pos')
         total_amount = Decimal('0')
@@ -231,6 +242,10 @@ class SubdiarioSaleReport(Report, Subdiario):
         for invoice in invoices:
             total_amount = invoice.total_amount + total_amount
 
+        taxes = Tax.search([
+            ('group.kind', 'in', ['sale', 'both']),
+        ], order=[('name', 'ASC')])
+
         report_context = super(SubdiarioSaleReport, cls).get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
@@ -243,6 +258,9 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['get_account'] = cls.get_account
         report_context['get_iibb'] = cls.get_iibb
         report_context['get_iibb_name'] = cls.get_iibb_name
+        report_context['taxes'] = taxes
+        report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
+        report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
         return report_context
 
     @classmethod
