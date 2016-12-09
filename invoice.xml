@@ -74,8 +74,7 @@ this repository contains the full copyright notices and license terms. -->
         <menuitem icon="tryton-open" id="menu_subdiario" name="Subdiario"
             parent="account.menu_reporting" sequence="50"/>
         <menuitem name="Subdiario sale" parent="menu_subdiario"
-            sequence="50" action="wizard_subdiario_sale"
-            id="menu_subdiario_sale" icon="tryton-open"/>
+            sequence="50" id="menu_subdiario_sale" icon="tryton-open"/>
         <menuitem name="Sale complete" parent="menu_subdiario_sale"
             sequence="10" action="wizard_subdiario_sale"
             id="menu_subdiario_sale_complete" icon="tryton-spreadsheet"/>
