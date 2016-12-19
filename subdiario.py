@@ -19,6 +19,8 @@ class Subdiario(object):
                    and group_tax.lower() in invoice_tax.tax.group.code.lower():
                     amount = Currency.round(line.invoice.currency, invoice_tax.amount)
                     break
+        if line.invoice.type in ['out_credit_note', 'in_credit_note']:
+            amount = amount * -1
         return amount
 
     @classmethod
@@ -31,6 +33,8 @@ class Subdiario(object):
                     break
             else:
                 raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
+        if invoice.type in ['out_credit_note', 'in_credit_note']:
+            amount = amount * -1
         return amount
 
     @classmethod
@@ -52,11 +56,14 @@ class Subdiario(object):
         for invoice in invoices:
             for invoice_tax in invoice.taxes:
                 if invoice_tax.tax == tax:
+                    untaxed_amount = invoice.untaxed_amount
+                    if invoice.type in ['out_credit_note', 'in_credit_note']:
+                        untaxed_amount = untaxed_amount * -1
                     if invoice.currency.id != invoice.company.id:
                         amount += Currency.compute(
-                            invoice.currency, invoice.untaxed_amount, invoice.company.currency)
+                            invoice.currency, untaxed_amount, invoice.company.currency)
                     else:
-                        amount += invoice.currency.round(invoice.untaxed_amount)
+                        amount += invoice.currency.round(untaxed_amount)
         return amount
 
     @classmethod
@@ -66,11 +73,14 @@ class Subdiario(object):
         for invoice in invoices:
             for invoice_tax in invoice.taxes:
                 if invoice_tax.tax == tax:
+                    tax_amount = invoice_tax.amount
+                    if invoice.type in ['out_credit_note', 'in_credit_note']:
+                        tax_amount = tax_amount * -1
                     if invoice.currency.id != invoice.company.id:
                         amount += Currency.compute(
-                            invoice.currency, invoice_tax.amount, invoice.company.currency)
+                            invoice.currency, tax_amount, invoice.company.currency)
                     else:
-                        amount += invoice.currency.round(invoice_tax.amount)
+                        amount += invoice.currency.round(tax_amount)
         return amount
 
 
