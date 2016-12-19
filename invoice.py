@@ -131,7 +131,10 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
         company = Company(data['company'])
         for invoice in invoices:
-            total_amount = invoice.total_amount + total_amount
+            if invoice.type == 'in_credit_note':
+                total_amount = (invoice.total_amount * -1) + total_amount
+            else:
+                total_amount = invoice.total_amount + total_amount
 
         report_context = super(SubdiarioPurchaseReport, cls).get_context(records, data)
         report_context['company'] = company
@@ -242,7 +245,10 @@ class SubdiarioSaleReport(Report, Subdiario):
         company = Company(data['company'])
         pos = Pos(data['pos'])
         for invoice in invoices:
-            total_amount = invoice.total_amount + total_amount
+            if invoice.type == 'out_credit_note':
+                total_amount = (invoice.total_amount * -1) + total_amount
+            else:
+                total_amount = invoice.total_amount + total_amount
 
         taxes = Tax.search([
             ('group.kind', 'in', ['sale', 'both']),
