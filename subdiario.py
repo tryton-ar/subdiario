@@ -100,7 +100,10 @@ class Subdiario(object):
         amount = Decimal('0')
         for line in lines:
             if line.invoice_taxes:
-                amount = line.amount + amount
+                line_amount = line.amount
+                if line.invoice.type in ['out_credit_note', 'in_credit_note']:
+                    line_amount = line_amount * -1
+                amount = line_amount + amount
         return amount
 
     @classmethod
@@ -108,7 +111,10 @@ class Subdiario(object):
         amount = Decimal('0')
         for line in lines:
             if line.invoice_taxes == ():
-                amount = line.amount + amount
+                line_amount = line.amount
+                if line.invoice.type in ['out_credit_note', 'in_credit_note']:
+                    line_amount = line_amount * -1
+                amount = line_amount + amount
         return amount
 
     @classmethod
@@ -118,7 +124,7 @@ class Subdiario(object):
         for key, values in impuestos_lst:
             if key:
                 for impuesto in values:
-                    if 'percepcion' in impuesto.tax.group.code.lower():
+                    if 'iibb' in impuesto.tax.group.code.lower():
                         zona = impuesto.tax.name
         return zona
 
