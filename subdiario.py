@@ -83,6 +83,40 @@ class Subdiario(object):
                         amount += invoice.currency.round(tax_amount)
         return amount
 
+    @classmethod
+    def get_sum_neto_by_iva_condition(cls, iva_condition, invoices):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice in invoices:
+            if invoice.party.iva_condition == iva_condition:
+                untaxed_amount = invoice.untaxed_amount
+                if invoice.type in ['out_credit_note', 'in_credit_note']:
+                    untaxed_amount = untaxed_amount * -1
+                if invoice.currency.id != invoice.company.id:
+                    amount += Currency.compute(
+                        invoice.currency, untaxed_amount, invoice.company.currency)
+                else:
+                    amount += invoice.currency.round(untaxed_amount)
+        return amount
+
+    @classmethod
+    def get_sum_percibido_by_iva_condition(cls, iva_condition, invoices):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice in invoices:
+            if invoice.party.iva_condition == iva_condition:
+                for invoice_tax in invoice.taxes:
+                    if 'iva' in invoice_tax.tax.group.code.lower():
+                        tax_amount = invoice_tax.amount
+                        if invoice.type in ['out_credit_note', 'in_credit_note']:
+                            tax_amount = tax_amount * -1
+                        if invoice.currency.id != invoice.company.id:
+                            amount += Currency.compute(
+                                invoice.currency, tax_amount, invoice.company.currency)
+                        else:
+                            amount += invoice.currency.round(tax_amount)
+        return amount
+
 
     @classmethod
     def get_account(cls, lines):

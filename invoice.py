@@ -232,6 +232,7 @@ class SubdiarioSaleReport(Report, Subdiario):
         Company = pool.get('company.company')
         Pos = pool.get('account.pos')
         total_amount = Decimal('0')
+        total_untaxed_amount = Decimal('0')
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
@@ -247,12 +248,22 @@ class SubdiarioSaleReport(Report, Subdiario):
         for invoice in invoices:
             if invoice.type == 'out_credit_note':
                 total_amount = (invoice.total_amount * -1) + total_amount
+                total_untaxed_amount = (invoice.untaxed_amount * -1) + total_untaxed_amount
             else:
                 total_amount = invoice.total_amount + total_amount
+                total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
 
         taxes = Tax.search([
             ('group.kind', 'in', ['sale', 'both']),
         ], order=[('name', 'ASC')])
+
+        iva_conditions = [
+            'responsable_inscripto',
+            'exento',
+            'consumidor_final',
+            'monotributo',
+            'no_alcanzado',
+            ]
 
         report_context = super(SubdiarioSaleReport, cls).get_context(records, data)
         report_context['company'] = company
@@ -260,6 +271,7 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['to_date'] = data['to_date']
         report_context['pos'] = pos
         report_context['invoices'] = invoices
+        report_context['total_untaxed_amount'] = total_untaxed_amount
         report_context['total_amount'] = total_amount
         report_context['format_tipo_comprobante'] = cls.format_tipo_comprobante
         report_context['get_iva'] = cls.get_iva
@@ -267,8 +279,11 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['get_iibb'] = cls.get_iibb
         report_context['get_iibb_name'] = cls.get_iibb_name
         report_context['taxes'] = taxes
+        report_context['iva_conditions'] = iva_conditions
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
         report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
+        report_context['get_sum_neto_by_iva_condition'] = cls.get_sum_neto_by_iva_condition
+        report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
         return report_context
 
     @classmethod
