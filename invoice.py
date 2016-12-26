@@ -130,6 +130,10 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('active', 'in', [True, False]),
         ], order=[('name', 'ASC')])
 
+        alicuotas = Tax.search([
+            ('group.kind', 'in', ['purchase']),
+            ('group.code', 'in', ['IVA']),
+        ], order=[('name', 'ASC')])
 
         company = Company(data['company'])
         for invoice in invoices:
@@ -139,7 +143,6 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             else:
                 total_amount = invoice.total_amount + total_amount
                 total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
-
         iva_conditions = [
             'responsable_inscripto',
             'exento',
@@ -163,11 +166,14 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         report_context['get_concepto'] = cls.get_concepto
         report_context['get_account'] = cls.get_account
         report_context['taxes'] = taxes
+        report_context['alicuotas'] = alicuotas
         report_context['iva_conditions'] = iva_conditions
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
         report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
         report_context['get_sum_neto_by_iva_condition'] = cls.get_sum_neto_by_iva_condition
         report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
+        report_context['get_sum_neto_by_tax_and_iva_condition'] = cls.get_sum_neto_by_tax_and_iva_condition
+        report_context['get_sum_percibido_by_tax_and_iva_condition'] = cls.get_sum_percibido_by_tax_and_iva_condition
 
         return report_context
 
@@ -276,7 +282,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 
         alicuotas = Tax.search([
             ('group.kind', 'in', ['sale']),
-            ('group.code', 'in', ['iva']),
+            ('group.code', 'in', ['IVA']),
         ], order=[('name', 'ASC')])
 
         iva_conditions = [
