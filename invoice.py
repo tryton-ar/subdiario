@@ -274,6 +274,11 @@ class SubdiarioSaleReport(Report, Subdiario):
             ('active', 'in', [True, False]),
         ], order=[('name', 'ASC')])
 
+        alicuotas = Tax.search([
+            ('group.kind', 'in', ['sale']),
+            ('group.code', 'in', ['iva']),
+        ], order=[('name', 'ASC')])
+
         iva_conditions = [
             'responsable_inscripto',
             'exento',
@@ -296,11 +301,14 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['get_iibb'] = cls.get_iibb
         report_context['get_iibb_name'] = cls.get_iibb_name
         report_context['taxes'] = taxes
+        report_context['alicuotas'] = alicuotas
         report_context['iva_conditions'] = iva_conditions
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
         report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
         report_context['get_sum_neto_by_iva_condition'] = cls.get_sum_neto_by_iva_condition
         report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
+        report_context['get_sum_neto_by_tax_and_iva_condition'] = cls.get_sum_neto_by_tax_and_iva_condition
+        report_context['get_sum_percibido_by_tax_and_iva_condition'] = cls.get_sum_percibido_by_tax_and_iva_condition
         return report_context
 
     @classmethod
