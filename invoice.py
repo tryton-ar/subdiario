@@ -127,6 +127,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
         taxes = Tax.search([
             ('group.kind', 'in', ['purchase', 'both']),
+            ('active', 'in', [True, False]),
         ], order=[('name', 'ASC')])
 
 
@@ -270,6 +271,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 
         taxes = Tax.search([
             ('group.kind', 'in', ['sale', 'both']),
+            ('active', 'in', [True, False]),
         ], order=[('name', 'ASC')])
 
         iva_conditions = [
