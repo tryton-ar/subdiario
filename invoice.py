@@ -114,6 +114,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
         Company = pool.get('company.company')
+        Subdivision = pool.get('country.subdivision')
         total_amount = Decimal('0')
         total_untaxed_amount = Decimal('0')
 
@@ -135,6 +136,12 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('group.code', 'in', ['IVA']),
         ], order=[('name', 'ASC')])
 
+        iibb_taxes = Tax.search([
+            ('group.kind', 'in', ['purchase', 'both']),
+            ('group.code', 'in', ['IIBB']),
+            ('active', 'in', [True, False]),
+        ], order=[('name', 'ASC')])
+
         company = Company(data['company'])
         for invoice in invoices:
             if invoice.type == 'in_credit_note':
@@ -151,11 +158,16 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             'no_alcanzado',
             ]
 
+        subdivisions = Subdivision.search([
+            ('country.code', '=', 'AR')
+        ], order=[('name', 'ASC')])
+
         report_context = super(SubdiarioPurchaseReport, cls).get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
         report_context['invoices'] = invoices
+        report_context['subdivisions'] = subdivisions
         report_context['total_amount'] = total_amount
         report_context['total_untaxed_amount'] = total_untaxed_amount
         report_context['format_tipo_comprobante'] = cls.format_tipo_comprobante
@@ -168,12 +180,15 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         report_context['taxes'] = taxes
         report_context['alicuotas'] = alicuotas
         report_context['iva_conditions'] = iva_conditions
+        report_context['iibb_taxes'] = iibb_taxes
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
         report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
         report_context['get_sum_neto_by_iva_condition'] = cls.get_sum_neto_by_iva_condition
         report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
         report_context['get_sum_neto_by_tax_and_iva_condition'] = cls.get_sum_neto_by_tax_and_iva_condition
         report_context['get_sum_percibido_by_tax_and_iva_condition'] = cls.get_sum_percibido_by_tax_and_iva_condition
+        report_context['get_sum_neto_by_tax_and_subdivision'] = cls.get_sum_neto_by_tax_and_subdivision
+        report_context['get_sum_percibido_by_tax_and_subdivision'] = cls.get_sum_percibido_by_tax_and_subdivision
 
         return report_context
 

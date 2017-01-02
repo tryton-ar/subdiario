@@ -180,6 +180,42 @@ class Subdiario(object):
         return amount
 
     @classmethod
+    def get_sum_neto_by_tax_and_subdivision(cls, tax, subdivision, invoices):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice in invoices:
+            if invoice.invoice_address.subdivision == subdivision:
+                for invoice_tax in invoice.taxes:
+                    if invoice_tax.tax == tax:
+                        untaxed_amount = invoice.untaxed_amount
+                        if invoice.type in ['out_credit_note', 'in_credit_note']:
+                            untaxed_amount = untaxed_amount * -1
+                        if invoice.currency.id != invoice.company.currency.id:
+                            amount += Currency.compute(
+                                invoice.currency, untaxed_amount, invoice.company.currency)
+                        else:
+                            amount += invoice.currency.round(untaxed_amount)
+        return amount
+
+    @classmethod
+    def get_sum_percibido_by_tax_and_subdivision(cls, tax, subdivision, invoices):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice in invoices:
+            if invoice.invoice_address.subdivision == subdivision:
+                for invoice_tax in invoice.taxes:
+                    if invoice_tax.tax == tax:
+                        tax_amount = invoice_tax.amount
+                        if invoice.type in ['out_credit_note', 'in_credit_note']:
+                            tax_amount = tax_amount * -1
+                        if invoice.currency.id != invoice.company.currency.id:
+                            amount += Currency.compute(
+                                invoice.currency, tax_amount, invoice.company.currency)
+                        else:
+                            amount += invoice.currency.round(tax_amount)
+        return amount
+
+    @classmethod
     def get_account(cls, lines):
         amounts = [(c.amount, c.account.rec_name) for c in lines]
         concepto_amount = Decimal('0')
@@ -213,14 +249,17 @@ class Subdiario(object):
         return amount
 
     @classmethod
-    def get_zona_iibb(cls, lines):
-        impuestos_lst = [(c.invoice_taxes != (), c.invoice_taxes) for c in lines]
+    def get_zona_iibb(cls, invoice):
         zona = ''
-        for key, values in impuestos_lst:
-            if key:
-                for impuesto in values:
-                    if 'iibb' in impuesto.tax.group.code.lower():
-                        zona = impuesto.tax.name
+        for invoice_tax in invoice.taxes:
+            if invoice_tax.tax.group:
+                if 'iibb' in invoice_tax.tax.group.code.lower():
+                    if invoice.subdivision == '':
+                        zona = 'The subdivision is missing at party %s' % invoice.party
+                    else:
+                        zona = invoice.subdivision
+            else:
+                raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
         return zona
 
     @classmethod
