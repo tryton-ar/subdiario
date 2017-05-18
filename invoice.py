@@ -144,12 +144,9 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
         company = Company(data['company'])
         for invoice in invoices:
-            if invoice.type == 'in_credit_note':
-                total_amount = (invoice.total_amount * -1) + total_amount
-                total_untaxed_amount = (invoice.untaxed_amount * -1) + total_untaxed_amount
-            else:
-                total_amount = invoice.total_amount + total_amount
-                total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
+            total_amount = invoice.total_amount + total_amount
+            total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
+
         iva_conditions = [
             'responsable_inscripto',
             'exento',
@@ -282,13 +279,10 @@ class SubdiarioSaleReport(Report, Subdiario):
 
         company = Company(data['company'])
         pos = Pos(data['pos'])
+
         for invoice in invoices:
-            if invoice.type == 'out_credit_note':
-                total_amount = (invoice.total_amount * -1) + total_amount
-                total_untaxed_amount = (invoice.untaxed_amount * -1) + total_untaxed_amount
-            else:
-                total_amount = invoice.total_amount + total_amount
-                total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
+            total_amount = invoice.total_amount + total_amount
+            total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
 
         taxes = Tax.search([
             ('group.kind', 'in', ['sale', 'both']),
@@ -385,8 +379,9 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         pos_sequences = PosSequence.search([
             ('pos', '=', pos.id)
         ])
-        #for invoice in invoices:
-        #    total_amount = invoice.total_amount + total_amount
+
+        for invoice in invoices:
+            total_amount = invoice.total_amount + total_amount
 
         report_context = super(SubdiarioSaleTypeReport, cls).get_context(records, data)
         report_context['company'] = company
@@ -455,8 +450,9 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         subdivisions = Subdivision.search([
             ('country.code', '=', 'AR')
         ], order=[('name', 'ASC')])
-        #for invoice in invoices:
-        #    total_amount = invoice.total_amount + total_amount
+
+        for invoice in invoices:
+            total_amount = invoice.total_amount + total_amount
 
         report_context = super(SubdiarioSaleSubdivisionReport, cls).get_context(records, data)
         report_context['company'] = company
