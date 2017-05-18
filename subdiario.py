@@ -17,8 +17,8 @@ class Subdiario(object):
             if type in invoice_tax.tax.name \
                and group_tax.lower() in invoice_tax.tax.group.code.lower():
                 tax_amount = invoice_tax.amount
-                if invoice.type in ['out_credit_note', 'in_credit_note']:
-                    tax_amount = tax_amount * -1
+                #if invoice.type in ['out_credit_note', 'in_credit_note']:
+                #    tax_amount = tax_amount * -1
                 if invoice.currency.id != invoice.company.currency.id:
                     amount += Currency.compute(
                         invoice.currency, tax_amount, invoice.company.currency)
@@ -35,8 +35,6 @@ class Subdiario(object):
             if invoice_tax.tax.group:
                 if 'iibb' in invoice_tax.tax.group.code.lower():
                     tax_amount = invoice_tax.amount
-                    if invoice.type in ['out_credit_note', 'in_credit_note']:
-                        tax_amount = tax_amount * -1
                     if invoice.currency.id != invoice.company.currency.id:
                         amount += Currency.compute(
                             invoice.currency, tax_amount, invoice.company.currency)
@@ -71,8 +69,6 @@ class Subdiario(object):
                 if invoice_tax.tax == tax:
                     if invoice_tax.manual:
                         untaxed_amount = invoice_tax.base
-                        if invoice.type in ['out_credit_note', 'in_credit_note']:
-                            untaxed_amount = untaxed_amount * -1
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
                                 invoice.currency, untaxed_amount, invoice.company.currency)
@@ -83,8 +79,6 @@ class Subdiario(object):
                             for line_tax in line.taxes:
                                 if line_tax == tax:
                                     untaxed_amount = line.amount
-                                    if invoice.type in ['out_credit_note', 'in_credit_note']:
-                                        untaxed_amount = untaxed_amount * -1
                                     if invoice.currency.id != invoice.company.currency.id:
                                         amount += Currency.compute(
                                             invoice.currency, untaxed_amount, invoice.company.currency)
@@ -100,8 +94,6 @@ class Subdiario(object):
             for invoice_tax in invoice.taxes:
                 if invoice_tax.tax == tax:
                     tax_amount = invoice_tax.amount
-                    if invoice.type in ['out_credit_note', 'in_credit_note']:
-                        tax_amount = tax_amount * -1
                     if invoice.currency.id != invoice.company.currency.id:
                         amount += Currency.compute(
                             invoice.currency, tax_amount, invoice.company.currency)
@@ -116,8 +108,6 @@ class Subdiario(object):
         for invoice in invoices:
             if invoice.party.iva_condition == iva_condition:
                 untaxed_amount = invoice.untaxed_amount
-                if invoice.type in ['out_credit_note', 'in_credit_note']:
-                    untaxed_amount = untaxed_amount * -1
                 if invoice.currency.id != invoice.company.currency.id:
                     amount += Currency.compute(
                         invoice.currency, untaxed_amount, invoice.company.currency)
@@ -134,8 +124,6 @@ class Subdiario(object):
                 for invoice_tax in invoice.taxes:
                     if 'iva' in invoice_tax.tax.group.code.lower():
                         tax_amount = invoice_tax.amount
-                        if invoice.type in ['out_credit_note', 'in_credit_note']:
-                            tax_amount = tax_amount * -1
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
                                 invoice.currency, tax_amount, invoice.company.currency)
@@ -152,8 +140,6 @@ class Subdiario(object):
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax == tax:
                         untaxed_amount = invoice.untaxed_amount
-                        if invoice.type in ['out_credit_note', 'in_credit_note']:
-                            untaxed_amount = untaxed_amount * -1
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
                                 invoice.currency, untaxed_amount, invoice.company.currency)
@@ -170,8 +156,6 @@ class Subdiario(object):
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax == tax:
                         tax_amount = invoice_tax.amount
-                        if invoice.type in ['out_credit_note', 'in_credit_note']:
-                            tax_amount = tax_amount * -1
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
                                 invoice.currency, tax_amount, invoice.company.currency)
@@ -188,8 +172,6 @@ class Subdiario(object):
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax == tax:
                         untaxed_amount = invoice.untaxed_amount
-                        if invoice.type in ['out_credit_note', 'in_credit_note']:
-                            untaxed_amount = untaxed_amount * -1
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
                                 invoice.currency, untaxed_amount, invoice.company.currency)
@@ -206,8 +188,6 @@ class Subdiario(object):
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax == tax:
                         tax_amount = invoice_tax.amount
-                        if invoice.type in ['out_credit_note', 'in_credit_note']:
-                            tax_amount = tax_amount * -1
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
                                 invoice.currency, tax_amount, invoice.company.currency)
@@ -232,8 +212,6 @@ class Subdiario(object):
         for line in lines:
             if line.invoice_taxes:
                 line_amount = line.amount
-                if line.invoice.type in ['out_credit_note', 'in_credit_note']:
-                    line_amount = line_amount * -1
                 amount = line_amount + amount
         return amount
 
@@ -243,8 +221,6 @@ class Subdiario(object):
         for line in lines:
             if line.invoice_taxes == ():
                 line_amount = line.amount
-                if line.invoice.type in ['out_credit_note', 'in_credit_note']:
-                    line_amount = line_amount * -1
                 amount = line_amount + amount
         return amount
 
