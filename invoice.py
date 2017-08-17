@@ -195,8 +195,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
     @classmethod
     def format_tipo_comprobante(cls, tipo_cpte):
         Invoice = Pool().get('account.invoice')
-        return tipo_cpte + ' - ' + \
-            dict(Invoice._fields['tipo_comprobante'].selection)[tipo_cpte]
+        return '%s - %s' % (tipo_cpte,
+            dict(Invoice._fields['tipo_comprobante'].selection)[tipo_cpte])
 
 
 class SubdiarioSaleStart(ModelView):
@@ -334,8 +334,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 
     @classmethod
     def format_tipo_comprobante(cls, tipo_cpte):
-        return tipo_cpte.invoice_type + ' - ' + \
-            tipo_cpte.rec_name
+        return '%s - %s' % (tipo_cpte.invoice_type, tipo_cpte.rec_name)
 
 
 class SubdiarioSaleType(Wizard):
@@ -405,8 +404,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
 
     @classmethod
     def format_tipo_comprobante(cls, tipo_cpte):
-        return tipo_cpte.invoice_type + ' - ' + \
-            tipo_cpte.rec_name
+        return '%s - %s' % (tipo_cpte.invoice_type, tipo_cpte.rec_name)
 
 class SubdiarioSaleSubdivision(Wizard):
     'Post Invoices'
@@ -475,5 +473,4 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
 
     @classmethod
     def format_tipo_comprobante(cls, tipo_cpte):
-        return tipo_cpte.invoice_type + ' - ' + \
-            tipo_cpte.rec_name
+        return '%s - %s' % (tipo_cpte.invoice_type, tipo_cpte.rec_name)
