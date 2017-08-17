@@ -2,7 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-#, fuzzy
 msgctxt "field:account.invoice,address:"
 msgid "Address"
 msgstr "Direcciones"
@@ -11,52 +10,42 @@ msgctxt "field:account.invoice,subdiario_type:"
 msgid "Subdiario type"
 msgstr "Tipo de comprobante"
 
-#, fuzzy
 msgctxt "field:account.invoice,subdivision:"
 msgid "Subdivision"
 msgstr "Subdivisión"
 
-#, fuzzy
 msgctxt "field:subdiario.purchase.start,company:"
 msgid "Company"
 msgstr "Empresa"
 
-#, fuzzy
 msgctxt "field:subdiario.purchase.start,from_date:"
 msgid "From Date"
 msgstr "Fecha inicial"
 
-#, fuzzy
 msgctxt "field:subdiario.purchase.start,id:"
 msgid "ID"
 msgstr "ID"
 
-#, fuzzy
 msgctxt "field:subdiario.purchase.start,to_date:"
 msgid "To Date"
 msgstr "Hasta la fecha"
 
-#, fuzzy
 msgctxt "field:subdiario.sale.start,company:"
 msgid "Company"
 msgstr "Empresa"
 
-#, fuzzy
 msgctxt "field:subdiario.sale.start,from_date:"
 msgid "From Date"
 msgstr "Fecha inicial"
 
-#, fuzzy
 msgctxt "field:subdiario.sale.start,id:"
 msgid "ID"
 msgstr "ID"
 
-#, fuzzy
 msgctxt "field:subdiario.sale.start,pos:"
 msgid "Point of Sale"
 msgstr "Punto de Venta"
 
-#, fuzzy
 msgctxt "field:subdiario.sale.start,to_date:"
 msgid "To Date"
 msgstr "Hasta la fecha"
@@ -97,7 +86,6 @@ msgctxt "model:ir.ui.menu,name:menu_subdiario"
 msgid "Subdiario"
 msgstr "Subdiario"
 
-#, fuzzy
 msgctxt "model:ir.ui.menu,name:menu_subdiario_purchase"
 msgid "Purchase"
 msgstr "Compras"
@@ -130,57 +118,46 @@ msgctxt "selection:account.invoice,subdiario_type:"
 msgid ""
 msgstr ""
 
-#, fuzzy
 msgctxt "selection:account.invoice,subdiario_type:"
 msgid "Goods"
 msgstr "Bienes"
 
-#, fuzzy
 msgctxt "selection:account.invoice,subdiario_type:"
 msgid "Location"
 msgstr "Ubicación"
 
-#, fuzzy
 msgctxt "selection:account.invoice,subdiario_type:"
 msgid "Service"
 msgstr "Servicio"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.purchase,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.purchase,start,print_:"
 msgid "OK"
 msgstr "Aceptar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.sale,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.sale,start,print_:"
 msgid "OK"
 msgstr "Aceptar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.sale.subdivision,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.sale.subdivision,start,print_:"
 msgid "OK"
 msgstr "Aceptar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.sale.type,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#, fuzzy
 msgctxt "wizard_button:subdiario.sale.type,start,print_:"
 msgid "OK"
 msgstr "Aceptar"
