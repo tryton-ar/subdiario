@@ -38,6 +38,7 @@ msgctxt "field:subdiario.sale.start,from_date:"
 msgid "From Date"
 msgstr "Fecha inicial"
 
+msgctxt "field:subdiario.sale.start,id:"
 msgid "ID"
 msgstr "ID"
 
