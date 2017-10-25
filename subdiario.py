@@ -32,16 +32,14 @@ class Subdiario(object):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group:
-                if 'iibb' in invoice_tax.tax.group.code.lower():
-                    tax_amount = invoice_tax.amount
-                    if invoice.currency.id != invoice.company.currency.id:
-                        amount += Currency.compute(
-                            invoice.currency, tax_amount, invoice.company.currency)
-                    else:
-                        amount += invoice.currency.round(tax_amount)
-            else:
-                raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
+            if (invoice_tax.tax.group and 'iibb' in
+                    invoice_tax.tax.group.code.lower()):
+                tax_amount = invoice_tax.amount
+                if invoice.currency.id != invoice.company.currency.id:
+                    amount += Currency.compute(
+                        invoice.currency, tax_amount, invoice.company.currency)
+                else:
+                    amount += invoice.currency.round(tax_amount)
         return amount
 
     @classmethod
@@ -49,15 +47,13 @@ class Subdiario(object):
         name = ''
         one_tax = True
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group:
-                if 'iibb' in invoice_tax.tax.group.code.lower():
-                    if one_tax:
-                        name = invoice_tax.tax.rec_name
-                        one_tax = False
-                    else:
-                        name += '| ' + invoice_tax.tax.rec_name
-            else:
-                raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
+            if (invoice_tax.tax.group and 'iibb' in
+                    invoice_tax.tax.group.code.lower()):
+                if one_tax:
+                    name = invoice_tax.tax.rec_name
+                    one_tax = False
+                else:
+                    name += '| ' + invoice_tax.tax.rec_name
         return name
 
     @classmethod
@@ -122,7 +118,8 @@ class Subdiario(object):
         for invoice in invoices:
             if invoice.party.iva_condition == iva_condition:
                 for invoice_tax in invoice.taxes:
-                    if 'iva' in invoice_tax.tax.group.code.lower():
+                    if (invoice_tax.tax.group and 'iva' in
+                            invoice_tax.tax.group.code.lower()):
                         tax_amount = invoice_tax.amount
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
@@ -228,14 +225,12 @@ class Subdiario(object):
     def get_zona_iibb(cls, invoice):
         zona = ''
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group:
-                if 'iibb' in invoice_tax.tax.group.code.lower():
-                    if invoice.subdivision == '':
-                        zona = 'The subdivision is missing at party %s' % invoice.party
-                    else:
-                        zona = invoice.subdivision
-            else:
-                raise ValueError('missing_tax_group %s ' % invoice_tax.rec_name)
+            if (invoice_tax.tax.group and 'iibb' in
+                    invoice_tax.tax.group.code.lower()):
+                if invoice.subdivision == '':
+                    zona = 'The subdivision is missing at party %s' % invoice.party
+                else:
+                    zona = invoice.subdivision
         return zona
 
     @classmethod
