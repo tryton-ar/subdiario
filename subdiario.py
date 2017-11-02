@@ -14,8 +14,8 @@ class Subdiario(object):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if type in invoice_tax.tax.name \
-               and group_tax.lower() in invoice_tax.tax.group.code.lower():
+            if (type in invoice_tax.tax.name and invoice_tax.tax.group
+               and group_tax.lower() in invoice_tax.tax.group.code.lower()):
                 tax_amount = invoice_tax.amount
                 if invoice.type in ['out_credit_note', 'in_credit_note']:
                     tax_amount = tax_amount * -1
