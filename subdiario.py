@@ -63,23 +63,12 @@ class Subdiario(object):
         for invoice in invoices:
             for invoice_tax in invoice.taxes:
                 if invoice_tax.tax == tax:
-                    if invoice_tax.manual:
-                        untaxed_amount = invoice_tax.base
-                        if invoice.currency.id != invoice.company.currency.id:
-                            amount += Currency.compute(
-                                invoice.currency, untaxed_amount, invoice.company.currency)
-                        else:
-                            amount += invoice.currency.round(untaxed_amount)
+                    untaxed_amount = invoice_tax.base
+                    if invoice.currency.id != invoice.company.currency.id:
+                        amount += Currency.compute(
+                            invoice.currency, untaxed_amount, invoice.company.currency)
                     else:
-                        for line in invoice.lines:
-                            for line_tax in line.taxes:
-                                if line_tax == tax:
-                                    untaxed_amount = line.amount
-                                    if invoice.currency.id != invoice.company.currency.id:
-                                        amount += Currency.compute(
-                                            invoice.currency, untaxed_amount, invoice.company.currency)
-                                    else:
-                                        amount += invoice.currency.round(untaxed_amount)
+                        amount += invoice.currency.round(untaxed_amount)
         return amount
 
     @classmethod
