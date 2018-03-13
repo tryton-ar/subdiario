@@ -5,7 +5,7 @@ this repository contains the full copyright notices and license terms. -->
     <label name="period"/>
     <field name="period"/>
     <label name="pos"/>
-    <field name="pos"/>
+    <field name="pos" widget="selection"/>
     <label name="company"/>
     <field name="company"/>
 </form>
