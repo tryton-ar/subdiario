@@ -275,7 +275,7 @@ class SubdiarioSaleReport(Report, Subdiario):
             ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
-        ], order=[('number', 'ASC')])
+        ], order=[('invoice_date', 'ASC')])
 
         company = Company(data['company'])
         pos = Pos(data['pos'])
@@ -371,7 +371,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
             ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
-        ], order=[('number', 'ASC')])
+        ], order=[('invoice_date', 'ASC')])
 
         company = Company(data['company'])
         pos = Pos(data['pos'])
@@ -440,7 +440,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
             ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
-        ], order=[('number', 'ASC')])
+        ], order=[('invoice_date', 'ASC')])
 
         company = Company(data['company'])
         pos = Pos(data['pos'])
