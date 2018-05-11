@@ -121,8 +121,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'in'),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
         ], order=[('invoice_date', 'ASC')])
 
@@ -271,8 +271,8 @@ class SubdiarioSaleReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'out'),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
@@ -367,8 +367,8 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'out'),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
@@ -436,8 +436,8 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'out'),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
