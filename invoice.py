@@ -65,8 +65,20 @@ class SubdiarioPurchaseStart(ModelView):
     'SubdiarioPurchaseStart'
     __name__ = 'subdiario.purchase.start'
 
-    period = fields.Many2One('account.period', 'Period', required=True)
+    from_date = fields.Date('From Date', required=True)
+    to_date = fields.Date('To Date', required=True)
     company = fields.Many2One('company.company', 'Company', required=True)
+
+    @staticmethod
+    def default_from_date():
+        import datetime
+        Date = Pool().get('ir.date')
+        return datetime.date(Date.today().year, 1, 1)
+
+    @staticmethod
+    def default_to_date():
+        Date = Pool().get('ir.date')
+        return Date.today()
 
     @staticmethod
     def default_company():
@@ -86,7 +98,8 @@ class SubdiarioPurchase(Wizard):
     def do_print_(self, action):
         data = {
             'company': self.start.company.id,
-            'period': self.start.period.id,
+            'from_date': self.start.from_date,
+            'to_date': self.start.to_date,
             }
         return action, data
 
@@ -101,14 +114,15 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
         Company = pool.get('company.company')
-        Period = pool.get('account.period')
         Subdivision = pool.get('country.subdivision')
         total_amount = Decimal('0')
         total_untaxed_amount = Decimal('0')
+
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'in'),
-            ('move.period', '=', data['period']),
+            ('invoice_date', '>=', data['from_date']),
+            ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
         ], order=[('invoice_date', 'ASC')])
 
@@ -129,7 +143,6 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         ], order=[('name', 'ASC')])
 
         company = Company(data['company'])
-        period = Period(data['period'])
         for invoice in invoices:
             total_amount = invoice.total_amount + total_amount
             total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
@@ -148,7 +161,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
         report_context = super(SubdiarioPurchaseReport, cls).get_context(records, data)
         report_context['company'] = company
-        report_context['period'] = period
+        report_context['from_date'] = data['from_date']
+        report_context['to_date'] = data['to_date']
         report_context['invoices'] = invoices
         report_context['subdivisions'] = subdivisions
         report_context['total_amount'] = total_amount
@@ -186,9 +200,21 @@ class SubdiarioSaleStart(ModelView):
     'SubdiarioSaleStart'
     __name__ = 'subdiario.sale.start'
 
-    period = fields.Many2One('account.period', 'Period', required=True)
+    from_date = fields.Date('From Date', required=True)
+    to_date = fields.Date('To Date', required=True)
     company = fields.Many2One('company.company', 'Company', required=True)
     pos = fields.Many2One('account.pos', 'Point of Sale', required=True)
+
+    @staticmethod
+    def default_from_date():
+        import datetime
+        Date = Pool().get('ir.date')
+        return datetime.date(Date.today().year, 1, 1)
+
+    @staticmethod
+    def default_to_date():
+        Date = Pool().get('ir.date')
+        return Date.today()
 
     @staticmethod
     def default_company():
@@ -221,7 +247,8 @@ class SubdiarioSale(Wizard):
     def do_print_(self, action):
         data = {
             'company': self.start.company.id,
-            'period': self.start.period.id,
+            'from_date': self.start.from_date,
+            'to_date': self.start.to_date,
             'pos': self.start.pos.id,
             }
         return action, data
@@ -237,7 +264,6 @@ class SubdiarioSaleReport(Report, Subdiario):
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
         Company = pool.get('company.company')
-        Period = pool.get('account.period')
         Pos = pool.get('account.pos')
         total_amount = Decimal('0')
         total_untaxed_amount = Decimal('0')
@@ -245,13 +271,13 @@ class SubdiarioSaleReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'out'),
-            ('move.period', '=', data['period']),
+            ('invoice_date', '>=', data['from_date']),
+            ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
 
         company = Company(data['company'])
-        period = Period(data['period'])
         pos = Pos(data['pos'])
 
         for invoice in invoices:
@@ -278,7 +304,8 @@ class SubdiarioSaleReport(Report, Subdiario):
 
         report_context = super(SubdiarioSaleReport, cls).get_context(records, data)
         report_context['company'] = company
-        report_context['period'] = period
+        report_context['from_date'] = data['from_date']
+        report_context['to_date'] = data['to_date']
         report_context['pos'] = pos
         report_context['invoices'] = invoices
         report_context['total_untaxed_amount'] = total_untaxed_amount
@@ -317,7 +344,8 @@ class SubdiarioSaleType(Wizard):
     def do_print_(self, action):
         data = {
             'company': self.start.company.id,
-            'period': self.start.period.id,
+            'from_date': self.start.from_date,
+            'to_date': self.start.to_date,
             'pos': self.start.pos.id,
             }
         return action, data
@@ -332,7 +360,6 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Company = pool.get('company.company')
-        Period = pool.get('account.period')
         Pos = pool.get('account.pos')
         PosSequence = pool.get('account.pos.sequence')
         total_amount = Decimal('0')
@@ -340,13 +367,13 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'out'),
-            ('move.period', '=', data['period']),
+            ('invoice_date', '>=', data['from_date']),
+            ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
 
         company = Company(data['company'])
-        period = Period(data['period'])
         pos = Pos(data['pos'])
         pos_sequences = PosSequence.search([
             ('pos', '=', pos.id)
@@ -357,7 +384,8 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
 
         report_context = super(SubdiarioSaleTypeReport, cls).get_context(records, data)
         report_context['company'] = company
-        report_context['period'] = period
+        report_context['from_date'] = data['from_date']
+        report_context['to_date'] = data['to_date']
         report_context['pos'] = pos
         report_context['tipos_cptes'] = pos_sequences
         report_context['invoices'] = invoices
@@ -386,7 +414,8 @@ class SubdiarioSaleSubdivision(Wizard):
     def do_print_(self, action):
         data = {
             'company': self.start.company.id,
-            'period': self.start.period.id,
+            'from_date': self.start.from_date,
+            'to_date': self.start.to_date,
             'pos': self.start.pos.id,
             }
         return action, data
@@ -400,7 +429,6 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Company = pool.get('company.company')
-        Period = pool.get('account.period')
         Pos = pool.get('account.pos')
         Subdivision = pool.get('country.subdivision')
         total_amount = Decimal('0')
@@ -408,13 +436,13 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'out'),
-            ('move.period', '=', data['period']),
+            ('invoice_date', '>=', data['from_date']),
+            ('invoice_date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
 
         company = Company(data['company'])
-        period = Period(data['period'])
         pos = Pos(data['pos'])
         # search subdivisions of Argentina
         subdivisions = Subdivision.search([
@@ -426,7 +454,8 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
 
         report_context = super(SubdiarioSaleSubdivisionReport, cls).get_context(records, data)
         report_context['company'] = company
-        report_context['period'] = period
+        report_context['from_date'] = data['from_date']
+        report_context['to_date'] = data['to_date']
         report_context['pos'] = pos
         report_context['subdivisions'] = subdivisions
         report_context['invoices'] = invoices
