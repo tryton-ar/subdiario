@@ -121,8 +121,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', 'in', ['in_invoice', 'in_credit_note']),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
         ], order=[('invoice_date', 'ASC')])
 
@@ -274,8 +274,8 @@ class SubdiarioSaleReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', 'in', ['out_invoice', 'out_credit_note']),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
@@ -373,8 +373,8 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', 'in', ['out_invoice', 'out_credit_note']),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
@@ -441,8 +441,8 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
             ('type', 'in', ['out_invoice', 'out_credit_note']),
-            ('invoice_date', '>=', data['from_date']),
-            ('invoice_date', '<=', data['to_date']),
+            ('move.date', '>=', data['from_date']),
+            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
             ('pos', '=', data['pos']),
         ], order=[('number', 'ASC')])
