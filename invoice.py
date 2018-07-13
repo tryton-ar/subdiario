@@ -216,8 +216,11 @@ class SubdiarioSaleStart(ModelView):
 
     @staticmethod
     def default_to_date():
+        #Date = Pool().get('ir.date')
+        #return Date.today()
+        import datetime
         Date = Pool().get('ir.date')
-        return Date.today()
+        return datetime.date(Date.today().year, 1, 4)
 
     @staticmethod
     def default_company():
@@ -330,11 +333,89 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
         report_context['get_sum_neto_by_tax_and_iva_condition'] = cls.get_sum_neto_by_tax_and_iva_condition
         report_context['get_sum_percibido_by_tax_and_iva_condition'] = cls.get_sum_percibido_by_tax_and_iva_condition
+        report_context['transporte_total'] = cls.transporte_total
         return report_context
 
     @classmethod
     def format_tipo_comprobante(cls, tipo_cpte):
         return '%s - %s' % (tipo_cpte.invoice_type, tipo_cpte.rec_name)
+
+    @classmethod
+    def transporte_total(self, invoices, end):
+        pool = Pool()
+        Invoice = pool.get('account.invoice')
+        chunk = 30
+        page = end/chunk
+        start = end - chunk
+        transporte = {}
+        tmp_ = invoices[start:end]
+        #tmp_ = [invoices[i: i + chunk]
+        #    for i in range(1, len(invoices), chunk)]
+        #import ipdb;ipdb.set_trace()
+        #invoices = Invoice.search([
+        #    ('state', 'in', ['posted', 'paid']),
+        #    ('type', 'in', ['out_invoice', 'out_credit_note']),
+        #    ('move.date', '>=', data['from_date']),
+        #    ('move.date', '<=', data['to_date']),
+        #    ('company', '=', data['company']),
+        #    ('pos', '=', data['pos']),
+        #], order=[('invoice_date', 'ASC')])
+        return Decimal('0')
+        #ipdb> tmp_[0][1].total_amount
+        #Decimal('1073.85')
+        #ipdb> tmp_[0][-1].total_amount
+        #Decimal('992.28')
+        #ipdb>
+
+
+#ipdb> tmp_[0].total_amount
+#Decimal('624.67')
+#ipdb> tmp_[-1].total_amount
+#Decimal('901.53')
+#ipdb>
+
+#ipdb> tmp_[0].total_amount
+#Decimal('992.28')
+#ipdb> tmp_[-1].total_amount
+#Decimal('8741.00')
+
+#ipdb> tmp_[0].total_amount
+#Decimal('19553.19')
+#ipdb> tmp_[-1].total_amount
+#Decimal('1879.86')
+#ipdb>
+
+# ultimo
+#ipdb> tmp_[0].total_amount
+#Decimal('3514.18')
+#ipdb> tmp_[-1].total_amount
+#Decimal('5896.56')
+#ipdb>
+
+
+
+
+        #for invoice in enumerate(invoices, end-chunk):
+        #    if i % 30 == 0:
+
+
+        #Company = pool.get('company.company')
+        #Pos = pool.get('account.pos')
+        #Currency = Pool().get('currency.currency')
+        #amount = Decimal('0')
+        #total_amount = Decimal('0')
+        #total_untaxed_amount = Decimal('0')
+
+        #invoices = Invoice.search([
+        #    ('state', 'in', ['posted', 'paid']),
+        #    ('type', 'in', ['out_invoice', 'out_credit_note']),
+        #    ('move.date', '>=', data['from_date']),
+        #    ('move.date', '<=', data['to_date']),
+        #    ('company', '=', data['company']),
+        #    ('pos', '=', data['pos']),
+        #], order=[('invoice_date', 'ASC')])
+        return Decimal('0')
+
 
 
 class SubdiarioSaleType(Wizard):

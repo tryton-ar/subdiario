@@ -9,13 +9,31 @@ from trytond.pool import Pool
 
 class Subdiario(object):
 
+    #@classmethod
+    #def get_iva(cls, invoice, type, group_tax='IVA'):
+    #    Currency = Pool().get('currency.currency')
+    #    amount = Decimal('0')
+    #    for invoice_tax in invoice.taxes:
+    #        if (type in invoice_tax.tax.name and invoice_tax.tax.group
+    #           and group_tax.lower() in invoice_tax.tax.group.code.lower()):
+    #            tax_amount = invoice_tax.amount
+    #            if invoice.type in ['out_credit_note', 'in_credit_note']:
+    #                tax_amount = tax_amount * -1
+    #            if invoice.currency.id != invoice.company.currency.id:
+    #                amount += Currency.compute(
+    #                    invoice.currency, tax_amount, invoice.company.currency)
+    #            else:
+    #                amount += invoice.currency.round(tax_amount)
+
+    #    return amount
+
     @classmethod
-    def get_iva(cls, invoice, type, group_tax='IVA'):
+    def get_iva(cls, invoice):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if (type in invoice_tax.tax.name and invoice_tax.tax.group
-               and group_tax.lower() in invoice_tax.tax.group.code.lower()):
+            if (invoice_tax.tax.group
+                    and 'iva' in invoice_tax.tax.group.code.lower()):
                 tax_amount = invoice_tax.amount
                 if invoice.type in ['out_credit_note', 'in_credit_note']:
                     tax_amount = tax_amount * -1
