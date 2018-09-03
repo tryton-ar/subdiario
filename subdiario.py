@@ -183,7 +183,7 @@ class Subdiario(object):
 
     @classmethod
     def get_account(cls, lines):
-        amounts = [(c.amount, c.account.rec_name) for c in lines]
+        amounts = [(abs(c.amount), c.account.rec_name) for c in lines]
         concepto_amount = Decimal('0')
         concepto = ''
         for amount, description in amounts:
