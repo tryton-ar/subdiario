@@ -18,10 +18,10 @@ __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
            'SubdiarioSaleReport', 'SubdiarioSaleType',
            'SubdiarioSaleTypeReport', 'SubdiarioSaleSubdivision',
            'SubdiarioSaleSubdivisionReport']
-__metaclass__ = PoolMeta
 
 
 class Invoice:
+    __metaclass__ = PoolMeta
     __name__ = 'account.invoice'
 
     subdiario_type = fields.Selection([
