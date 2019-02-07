@@ -23,13 +23,6 @@ __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
 class Invoice:
     __metaclass__ = PoolMeta
     __name__ = 'account.invoice'
-
-    subdiario_type = fields.Selection([
-        ('', ''),
-        ('goods', 'Goods'),
-        ('service', 'Service'),
-        ('localtion', 'Location'),
-    ], 'Subdiario type')
     subdivision = fields.Function(fields.Char('Subdivision'),
                                   'get_subdivision',
                                   searcher='search_subdivision')

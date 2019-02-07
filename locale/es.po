@@ -6,10 +6,6 @@ msgctxt "field:account.invoice,address:"
 msgid "Address"
 msgstr "Direcciones"
 
-msgctxt "field:account.invoice,subdiario_type:"
-msgid "Subdiario type"
-msgstr "Tipo de comprobante"
-
 msgctxt "field:account.invoice,subdivision:"
 msgid "Subdivision"
 msgstr "Subdivisión"
@@ -113,22 +109,6 @@ msgstr ""
 msgctxt "model:subdiario.sale.start,name:"
 msgid "SubdiarioSaleStart"
 msgstr ""
-
-msgctxt "selection:account.invoice,subdiario_type:"
-msgid ""
-msgstr ""
-
-msgctxt "selection:account.invoice,subdiario_type:"
-msgid "Goods"
-msgstr "Bienes"
-
-msgctxt "selection:account.invoice,subdiario_type:"
-msgid "Location"
-msgstr "Ubicación"
-
-msgctxt "selection:account.invoice,subdiario_type:"
-msgid "Service"
-msgstr "Servicio"
 
 msgctxt "wizard_button:subdiario.purchase,start,end:"
 msgid "Cancel"
