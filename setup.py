@@ -66,7 +66,7 @@ setup(name=name,
         ],
     package_data={
         'trytond.modules.subdiario': (info.get('xml', [])
-            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.odt']),
+            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fods']),
         },
     classifiers=[
         'Development Status :: 4 - Beta',
