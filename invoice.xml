@@ -71,22 +71,22 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">Subdiario purchase</field>
             <field name="wiz_name">subdiario.purchase</field>
         </record>
-        <menuitem icon="tryton-open" id="menu_subdiario" name="Subdiario"
+        <menuitem icon="tryton-folder" id="menu_subdiario" name="Subdiario"
             parent="account.menu_reporting" sequence="50"/>
         <menuitem name="Subdiario sale" parent="menu_subdiario"
-            sequence="50" id="menu_subdiario_sale" icon="tryton-open"/>
-        <menuitem name="Sale complete" parent="menu_subdiario_sale"
+            sequence="50" id="menu_subdiario_sale" icon="tryton-folder"/>
+        <menuitem parent="menu_subdiario_sale"
             sequence="10" action="wizard_subdiario_sale"
-            id="menu_subdiario_sale_complete" icon="tryton-spreadsheet"/>
-        <menuitem name="Sale by type" parent="menu_subdiario_sale"
+            id="menu_subdiario_sale_complete" icon="tryton-print"/>
+        <menuitem parent="menu_subdiario_sale"
             sequence="20" action="wizard_subdiario_sale_type"
-            id="menu_subdiario_sale_type" icon="tryton-spreadsheet"/>
-        <menuitem name="Sale by subdivision" parent="menu_subdiario_sale"
+            id="menu_subdiario_sale_type" icon="tryton-print"/>
+        <menuitem parent="menu_subdiario_sale"
             sequence="30" action="wizard_subdiario_sale_subdivision"
-            id="menu_subdiario_sale_subdivision" icon="tryton-spreadsheet"/>
+            id="menu_subdiario_sale_subdivision" icon="tryton-print"/>
 
-        <menuitem name="Purchase" parent="menu_subdiario"
+        <menuitem parent="menu_subdiario"
             sequence="50" action="wizard_subdiario_purchase"
-            id="menu_subdiario_purchase" icon="tryton-spreadsheet"/>
+            id="menu_subdiario_purchase" icon="tryton-print"/>
     </data>
 </tryton>
