@@ -10,7 +10,7 @@ from trytond.transaction import Transaction
 from trytond.report import Report
 
 from decimal import Decimal
-from subdiario import Subdiario
+from .subdiario import Subdiario
 
 
 __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
@@ -20,8 +20,7 @@ __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
            'SubdiarioSaleSubdivisionReport']
 
 
-class Invoice:
-    __metaclass__ = PoolMeta
+class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
     subdivision = fields.Function(fields.Char('Subdivision'),
                                   'get_subdivision',
