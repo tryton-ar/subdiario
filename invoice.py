@@ -10,7 +10,7 @@ from trytond.transaction import Transaction
 from trytond.report import Report
 
 from decimal import Decimal
-from subdiario import Subdiario
+from .subdiario import Subdiario
 
 
 __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
@@ -20,16 +20,8 @@ __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
            'SubdiarioSaleSubdivisionReport']
 
 
-class Invoice:
-    __metaclass__ = PoolMeta
+class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
-
-    subdiario_type = fields.Selection([
-        ('', ''),
-        ('goods', 'Goods'),
-        ('service', 'Service'),
-        ('localtion', 'Location'),
-    ], 'Subdiario type')
     subdivision = fields.Function(fields.Char('Subdivision'),
                                   'get_subdivision',
                                   searcher='search_subdivision')
@@ -41,7 +33,8 @@ class Invoice:
         for invoice in cls.browse(invoices):
             res[invoice.id] = ''
             if invoice.invoice_address:
-                res[invoice.id] = ' '.join(invoice.invoice_address.full_address.split('\n')[1:])
+                res[invoice.id] = ' '.join(
+                    invoice.invoice_address.full_address.split('\n')[1:])
         return res
 
     @classmethod
@@ -52,7 +45,8 @@ class Invoice:
             if invoice.invoice_address:
                 if hasattr(invoice.invoice_address, 'subdivision'):
                     if hasattr(invoice.invoice_address.subdivision, 'name'):
-                        subdivision_name = invoice.invoice_address.subdivision.name
+                        subdivision_name = \
+                            invoice.invoice_address.subdivision.name
                         res[invoice.id] = subdivision_name
         return res
 
@@ -145,7 +139,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         company = Company(data['company'])
         for invoice in invoices:
             total_amount = invoice.total_amount + total_amount
-            total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
+            total_untaxed_amount = (invoice.untaxed_amount +
+                total_untaxed_amount)
 
         iva_conditions = [
             'responsable_inscripto',
@@ -159,7 +154,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('country.code', '=', 'AR')
         ], order=[('name', 'ASC')])
 
-        report_context = super(SubdiarioPurchaseReport, cls).get_context(records, data)
+        report_context = super(SubdiarioPurchaseReport,
+            cls).get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -181,13 +177,20 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         report_context['iva_conditions'] = iva_conditions
         report_context['iibb_taxes'] = iibb_taxes
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
-        report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
-        report_context['get_sum_neto_by_iva_condition'] = cls.get_sum_neto_by_iva_condition
-        report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
-        report_context['get_sum_neto_by_tax_and_iva_condition'] = cls.get_sum_neto_by_tax_and_iva_condition
-        report_context['get_sum_percibido_by_tax_and_iva_condition'] = cls.get_sum_percibido_by_tax_and_iva_condition
-        report_context['get_sum_neto_by_tax_and_subdivision'] = cls.get_sum_neto_by_tax_and_subdivision
-        report_context['get_sum_percibido_by_tax_and_subdivision'] = cls.get_sum_percibido_by_tax_and_subdivision
+        report_context['get_sum_percibido_by_tax'] = \
+            cls.get_sum_percibido_by_tax
+        report_context['get_sum_neto_by_iva_condition'] = \
+            cls.get_sum_neto_by_iva_condition
+        report_context['get_sum_percibido_by_iva_condition'] = \
+            cls.get_sum_percibido_by_iva_condition
+        report_context['get_sum_neto_by_tax_and_iva_condition'] = \
+            cls.get_sum_neto_by_tax_and_iva_condition
+        report_context['get_sum_percibido_by_tax_and_iva_condition'] = \
+            cls.get_sum_percibido_by_tax_and_iva_condition
+        report_context['get_sum_neto_by_tax_and_subdivision'] = \
+            cls.get_sum_neto_by_tax_and_subdivision
+        report_context['get_sum_percibido_by_tax_and_subdivision'] = \
+            cls.get_sum_percibido_by_tax_and_subdivision
 
         return report_context
 
@@ -284,7 +287,8 @@ class SubdiarioSaleReport(Report, Subdiario):
 
         for invoice in invoices:
             total_amount = invoice.total_amount + total_amount
-            total_untaxed_amount = invoice.untaxed_amount + total_untaxed_amount
+            total_untaxed_amount = (invoice.untaxed_amount +
+                total_untaxed_amount)
 
         taxes = Tax.search([
             ('group.kind', 'in', ['sale', 'both']),
@@ -304,7 +308,8 @@ class SubdiarioSaleReport(Report, Subdiario):
             'no_alcanzado',
             ]
 
-        report_context = super(SubdiarioSaleReport, cls).get_context(records, data)
+        report_context = super(SubdiarioSaleReport,
+            cls).get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -321,11 +326,16 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['alicuotas'] = alicuotas
         report_context['iva_conditions'] = iva_conditions
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
-        report_context['get_sum_percibido_by_tax'] = cls.get_sum_percibido_by_tax
-        report_context['get_sum_neto_by_iva_condition'] = cls.get_sum_neto_by_iva_condition
-        report_context['get_sum_percibido_by_iva_condition'] = cls.get_sum_percibido_by_iva_condition
-        report_context['get_sum_neto_by_tax_and_iva_condition'] = cls.get_sum_neto_by_tax_and_iva_condition
-        report_context['get_sum_percibido_by_tax_and_iva_condition'] = cls.get_sum_percibido_by_tax_and_iva_condition
+        report_context['get_sum_percibido_by_tax'] = \
+            cls.get_sum_percibido_by_tax
+        report_context['get_sum_neto_by_iva_condition'] = \
+            cls.get_sum_neto_by_iva_condition
+        report_context['get_sum_percibido_by_iva_condition'] = \
+            cls.get_sum_percibido_by_iva_condition
+        report_context['get_sum_neto_by_tax_and_iva_condition'] = \
+            cls.get_sum_neto_by_tax_and_iva_condition
+        report_context['get_sum_percibido_by_tax_and_iva_condition'] = \
+            cls.get_sum_percibido_by_tax_and_iva_condition
         return report_context
 
     @classmethod
@@ -384,7 +394,8 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         for invoice in invoices:
             total_amount = invoice.total_amount + total_amount
 
-        report_context = super(SubdiarioSaleTypeReport, cls).get_context(records, data)
+        report_context = super(SubdiarioSaleTypeReport,
+            cls).get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -402,6 +413,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
     @classmethod
     def format_tipo_comprobante(cls, tipo_cpte):
         return '%s - %s' % (tipo_cpte.invoice_type, tipo_cpte.rec_name)
+
 
 class SubdiarioSaleSubdivision(Wizard):
     'Post Invoices'
@@ -454,7 +466,8 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         for invoice in invoices:
             total_amount = invoice.total_amount + total_amount
 
-        report_context = super(SubdiarioSaleSubdivisionReport, cls).get_context(records, data)
+        report_context = super(SubdiarioSaleSubdivisionReport,
+            cls).get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
