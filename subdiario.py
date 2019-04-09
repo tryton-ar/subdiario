@@ -10,23 +10,23 @@ from trytond.pool import Pool
 class Subdiario(object):
 
     @classmethod
-    def get_iva(cls, invoice, type, group_tax='IVA'):
+    def get_iva(cls, invoice, rate, group_tax='IVA'):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if (type in invoice_tax.tax.name and invoice_tax.tax.group and
-                    group_tax.lower() in invoice_tax.tax.group.code.lower()):
+            if (invoice_tax.tax.rate and invoice_tax.tax.rate == Decimal(rate)
+                    and invoice_tax.tax.group
+                    and group_tax.lower() in invoice_tax.tax.group.code.lower()):
                 tax_amount = invoice_tax.amount
                 if invoice.currency.id != invoice.company.currency.id:
                     amount += Currency.compute(
                         invoice.currency, tax_amount, invoice.company.currency)
                 else:
                     amount += invoice.currency.round(tax_amount)
-
         return amount
 
     @classmethod
-    def get_iibb(cls, invoice, group_tax='iibb'):
+    def get_iibb(cls, invoice):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
@@ -53,6 +53,21 @@ class Subdiario(object):
                 else:
                     name += '| ' + invoice_tax.tax.rec_name
         return name
+
+    @classmethod
+    def get_other_taxes(cls, invoice):
+        Currency = Pool().get('currency.currency')
+        amount = Decimal('0')
+        for invoice_tax in invoice.taxes:
+            if (invoice_tax.tax.group and invoice_tax.tax.group.code.lower()
+                    not in ['iibb', 'iva']):
+                tax_amount = invoice_tax.amount
+                if invoice.currency.id != invoice.company.currency.id:
+                    amount += Currency.compute(
+                        invoice.currency, tax_amount, invoice.company.currency)
+                else:
+                    amount += invoice.currency.round(tax_amount)
+        return amount
 
     @classmethod
     def get_sum_neto_by_tax(cls, tax, invoices):
