@@ -168,6 +168,8 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         report_context['get_gravado'] = cls.get_gravado
         report_context['get_no_gravado'] = cls.get_no_gravado
         report_context['get_iva'] = cls.get_iva
+        report_context['get_other_taxes'] = cls.get_other_taxes
+        report_context['get_iibb'] = cls.get_iibb
         report_context['get_zona_iibb'] = cls.get_zona_iibb
         report_context['get_concepto'] = cls.get_concepto
         report_context['get_account'] = cls.get_account
