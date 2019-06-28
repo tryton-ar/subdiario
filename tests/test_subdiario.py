@@ -20,6 +20,6 @@ def suite():
             SubdiarioTestCase))
     suite.addTests(doctest.DocFileSuite('scenario_subdiario.rst',
             tearDown=doctest_teardown, encoding='utf-8',
-            checker=doctest_checker))
-            #optionflags=doctest.REPORT_ONLY_FIRST_FAILURE))
+            checker=doctest_checker,
+            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE))
     return suite
