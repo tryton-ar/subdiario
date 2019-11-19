@@ -10,13 +10,12 @@ from trytond.pool import Pool
 class Subdiario(object):
 
     @classmethod
-    def get_iva(cls, invoice, rate, group_tax='IVA'):
+    def get_iva(cls, invoice, rate, group_tax='gravado'):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
             if (invoice_tax.tax.rate and invoice_tax.tax.rate == Decimal(rate)
-                    and invoice_tax.tax.group
-                    and group_tax.lower() in invoice_tax.tax.group.code.lower()):
+                    and invoice_tax.tax.group.afip_kind == 'gravado'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency.id != invoice.company.currency.id:
                     amount += Currency.compute(
@@ -30,8 +29,7 @@ class Subdiario(object):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if (invoice_tax.tax.group and 'iibb' in
-                    invoice_tax.tax.group.code.lower()):
+            if invoice_tax.tax.group.afip_kind == 'provincial':
                 tax_amount = invoice_tax.amount
                 if invoice.currency.id != invoice.company.currency.id:
                     amount += Currency.compute(
@@ -41,12 +39,11 @@ class Subdiario(object):
         return amount
 
     @classmethod
-    def get_iibb_name(cls, invoice, group_tax='iibb'):
+    def get_iibb_name(cls, invoice, group_tax='provincial'):
         name = ''
         one_tax = True
         for invoice_tax in invoice.taxes:
-            if (invoice_tax.tax.group and 'iibb' in
-                    invoice_tax.tax.group.code.lower()):
+            if invoice_tax.tax.group.afip_kind == 'provincial':
                 if one_tax:
                     name = invoice_tax.tax.rec_name
                     one_tax = False
@@ -59,8 +56,7 @@ class Subdiario(object):
         Currency = Pool().get('currency.currency')
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if (invoice_tax.tax.group and invoice_tax.tax.group.code.lower()
-                    not in ['iibb', 'iva']):
+            if invoice_tax.tax.group.afip_kind not in ('gravado', 'provincial'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency.id != invoice.company.currency.id:
                     amount += Currency.compute(
@@ -123,8 +119,7 @@ class Subdiario(object):
         for invoice in invoices:
             if invoice.party.iva_condition == iva_condition:
                 for invoice_tax in invoice.taxes:
-                    if (invoice_tax.tax.group and 'iva' in
-                            invoice_tax.tax.group.code.lower()):
+                    if invoice_tax.tax.group.afip_kind == 'gravado':
                         tax_amount = invoice_tax.amount
                         if invoice.currency.id != invoice.company.currency.id:
                             amount += Currency.compute(
@@ -238,8 +233,7 @@ class Subdiario(object):
     def get_zona_iibb(cls, invoice):
         zona = ''
         for invoice_tax in invoice.taxes:
-            if (invoice_tax.tax.group and 'iibb' in
-                    invoice_tax.tax.group.code.lower()):
+            if invoice_tax.tax.group.afip_kind == 'provincial':
                 if invoice.subdivision == '':
                     zona = 'Subdivision is missing %s' % invoice.party
                 else:

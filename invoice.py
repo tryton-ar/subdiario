@@ -126,13 +126,13 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         ], order=[('name', 'ASC')])
 
         alicuotas = Tax.search([
-            ('group.kind', 'in', ['purchase']),
-            ('group.code', 'in', ['IVA']),
+            ('group.kind', '=', 'purchase'),
+            ('group.afip_kind', '=', 'gravado'),
         ], order=[('name', 'ASC')])
 
         iibb_taxes = Tax.search([
             ('group.kind', 'in', ['purchase', 'both']),
-            ('group.code', 'in', ['IIBB']),
+            ('group.afip_kind', '=', 'provincial'),
             ('active', 'in', [True, False]),
         ], order=[('name', 'ASC')])
 
@@ -296,8 +296,8 @@ class SubdiarioSaleReport(Report, Subdiario):
         ], order=[('name', 'ASC')])
 
         alicuotas = Tax.search([
-            ('group.kind', 'in', ['sale']),
-            ('group.code', 'in', ['IVA']),
+            ('group.kind', '=', 'sale'),
+            ('group.afip_kind', '=', 'gravado'),
         ], order=[('name', 'ASC')])
 
         iva_conditions = [
