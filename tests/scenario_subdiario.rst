@@ -66,10 +66,12 @@ Create tax groups::
 Create tax IVA 21%::
 
     >>> customer_tax = create_tax(Decimal('.21'))
-    >>> customer_tax.group = tax_groups['iva']
+    >>> customer_tax.group = tax_groups['gravado']
+    >>> customer_tax.iva_code = '5'
     >>> customer_tax.save()
     >>> supplier_tax = create_tax(Decimal('.21'))
-    >>> supplier_tax.group = tax_groups['iva']
+    >>> supplier_tax.group = tax_groups['gravado']
+    >>> customer_tax.iva_code = '5'
     >>> supplier_tax.save()
 
 Create parties::
