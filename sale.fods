@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:initial-creator>Luciano Rossi</meta:initial-creator><meta:creation-date>2016-02-22T16:52:20.149453715</meta:creation-date><meta:generator>LibreOffice/5.2.7.2$Linux_X86_64 LibreOffice_project/20m0$Build-2</meta:generator><dc:date>2019-04-09T05:20:16.358671156</dc:date><dc:creator>Luciano Rossi</dc:creator><meta:editing-duration>PT15H53M45S</meta:editing-duration><meta:editing-cycles>71</meta:editing-cycles><meta:document-statistic meta:table-count="1" meta:cell-count="61" meta:object-count="0"/></office:meta>
+ <office:meta><meta:initial-creator>Luciano Rossi</meta:initial-creator><meta:creation-date>2016-02-22T16:52:20.149453715</meta:creation-date><meta:generator>LibreOffice/5.2.7.2$Linux_X86_64 LibreOffice_project/20m0$Build-2</meta:generator><dc:date>2019-12-13T10:35:46.103434353</dc:date><dc:creator>Luciano Rossi</dc:creator><meta:editing-duration>PT17H41M26S</meta:editing-duration><meta:editing-cycles>103</meta:editing-cycles><meta:document-statistic meta:table-count="1" meta:cell-count="57" meta:object-count="0"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">38752</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">13830</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">24807</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">12192</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
      <config:config-item-map-named config:name="Tables">
       <config:config-item-map-entry config:name="Hoja1">
-       <config:config-item config:name="CursorPositionX" config:type="int">2</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">8</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">3</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">28</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -31,7 +31,7 @@
       </config:config-item-map-entry>
      </config:config-item-map-named>
      <config:config-item config:name="ActiveTable" config:type="string">Hoja1</config:config-item>
-     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1303</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">663</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
      <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -76,8 +76,15 @@
    <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
    <config:config-item config:name="GridColor" config:type="long">12632256</config:config-item>
    <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrinterName" config:type="string">Lexmark-X264dn</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string">Brother-MFC-8480DN</config:config-item>
    <config:config-item-map-indexed config:name="ForbiddenCharacters">
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">es</config:config-item>
+     <config:config-item config:name="Country" config:type="string">ES</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
     <config:config-item-map-entry>
      <config:config-item config:name="Language" config:type="string">es</config:config-item>
      <config:config-item config:name="Country" config:type="string">AR</config:config-item>
@@ -91,7 +98,7 @@
    <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
    <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
    <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary">qQH+/0xleG1hcmstWDI2NGRuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpMZXhtYXJrLVgyNjRkbgAAAAAAAAAAAAAAAAAWAAMAzwAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9TGV4bWFyay1YMjY0ZG4Kb3JpZW50YXRpb249UG9ydHJhaXQKY29waWVzPTEKY29sbGF0ZT1mYWxzZQptYXJnaW5kYWp1c3RtZW50PTAsMCwwLDAKY29sb3JkZXB0aD0yNApwc2xldmVsPTAKcGRmZGV2aWNlPTEKY29sb3JkZXZpY2U9MApQUERDb250ZXhEYXRhClBhZ2VTaXplOkE0AER1cGxleDpOb25lAElucHV0U2xvdDpUcmF5MQAAEgBDT01QQVRfRFVQTEVYX01PREUKAERVUExFWF9PRkY=</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">sgH+/0Jyb3RoZXItTUZDLTg0ODBETgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpCcm90aGVyLU1GQy04NDgwRE4AAAAAAAAAAAAWAAMA2AAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9QnJvdGhlci1NRkMtODQ4MEROCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luZGFqdXN0bWVudD0wLDAsMCwwCmNvbG9yZGVwdGg9MjQKcHNsZXZlbD0wCnBkZmRldmljZT0xCmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4RGF0YQpEdXBsZXg6Tm9uZQBJbnB1dFNsb3Q6QXV0b1NlbGVjdABQYWdlU2l6ZTpBNAAAEgBDT01QQVRfRFVQTEVYX01PREUKAERVUExFWF9PRkY=</config:config-item>
    <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
    <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
   </config:config-item-set>
@@ -103,6 +110,7 @@
  </office:scripts>
  <office:font-face-decls>
   <style:font-face style:name="Ubuntu Light" svg:font-family="&apos;Ubuntu Light&apos;"/>
+  <style:font-face style:name="Liberation Sans1" svg:font-family="&apos;Liberation Sans&apos;" style:font-pitch="variable"/>
   <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
   <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
   <style:font-face style:name="Droid Sans Fallback" svg:font-family="&apos;Droid Sans Fallback&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
@@ -217,37 +225,43 @@
  </office:styles>
  <office:automatic-styles>
   <style:style style:name="co1" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="26.95mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="22.1mm"/>
   </style:style>
   <style:style style:name="co2" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="40.57mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="32.9mm"/>
   </style:style>
   <style:style style:name="co3" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="29.63mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="23.76mm"/>
   </style:style>
   <style:style style:name="co4" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="32.67mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="28.75mm"/>
   </style:style>
   <style:style style:name="co5" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="41.93mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="10.21mm"/>
   </style:style>
   <style:style style:name="co6" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="31.04mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="23.21mm"/>
   </style:style>
   <style:style style:name="co7" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="26.69mm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="24.87mm"/>
   </style:style>
   <style:style style:name="co8" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="16.58mm"/>
+  </style:style>
+  <style:style style:name="co9" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="16.86mm"/>
+  </style:style>
+  <style:style style:name="co10" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="14.92mm"/>
+  </style:style>
+  <style:style style:name="co11" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="11.32mm"/>
+  </style:style>
+  <style:style style:name="co12" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="22.58mm"/>
   </style:style>
   <style:style style:name="ro1" style:family="table-row">
-   <style:table-row-properties style:row-height="6.05mm" fo:break-before="auto" style:use-optimal-row-height="true"/>
-  </style:style>
-  <style:style style:name="ro2" style:family="table-row">
    <style:table-row-properties style:row-height="4.52mm" fo:break-before="auto" style:use-optimal-row-height="true"/>
-  </style:style>
-  <style:style style:name="ro3" style:family="table-row">
-   <style:table-row-properties style:row-height="5.17mm" fo:break-before="auto" style:use-optimal-row-height="true"/>
   </style:style>
   <style:style style:name="ta1" style:family="table" style:master-page-name="Default">
    <style:table-properties table:display="true" style:writing-mode="lr-tb"/>
@@ -265,93 +279,117 @@
   <number:text-style style:name="N100">
    <number:text-content/>
   </number:text-style>
-  <style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
-   <style:table-cell-properties fo:border-bottom="none" fo:background-color="#808080" style:text-align-source="fix" style:repeat-content="false" fo:border-left="none" fo:border-right="0.06pt solid #000000" fo:border-top="0.06pt solid #000000" style:vertical-align="middle"/>
-   <style:paragraph-properties fo:text-align="center"/>
-   <style:text-properties fo:color="#000000" fo:font-size="14pt" style:font-size-asian="14pt" style:font-size-complex="14pt"/>
+  <style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
+   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="ce2" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties fo:border-bottom="0.06pt solid #000000" fo:background-color="#808080" style:text-align-source="fix" style:repeat-content="false" fo:border-left="0.06pt solid #000000" fo:border-right="none" fo:border-top="0.06pt solid #000000" style:vertical-align="middle"/>
-   <style:paragraph-properties fo:text-align="center"/>
-   <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="ce3" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
-   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false" style:vertical-align="middle"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
-  <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N36"/>
-  <style:style style:name="ce6" style:family="table-cell" style:parent-style-name="Default">
+  <style:style style:name="ce3" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N36">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
+  </style:style>
+  <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
+  </style:style>
+  <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#eeeeee"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
+  </style:style>
+  <style:style style:name="ce6" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:border="0.06pt solid #000000"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
   <style:style style:name="ce7" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties fo:border="0.06pt solid #000000"/>
+   <style:table-cell-properties fo:background-color="#eeeeee" fo:border="0.06pt solid #000000"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
   <style:style style:name="ce8" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties fo:background-color="#eeeeee" fo:border="0.06pt solid #000000"/>
+   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
+   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="ce9" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties fo:border-bottom="none" fo:border-left="none" fo:border-right="none" fo:border-top="0.06pt solid #000000"/>
+  <style:style style:name="ce9" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
   <style:style style:name="ce10" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:background-color="#cccccc" fo:border="0.06pt solid #000000"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-weight="bold" style:font-size-asian="8pt" style:font-weight-asian="bold" style:font-size-complex="8pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce11" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
+   <style:table-cell-properties fo:border="0.06pt solid #000000"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
+  </style:style>
+  <style:style style:name="ce12" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
+   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
+   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce13" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
    <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
    <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="ce11" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100"/>
-  <style:style style:name="ce12" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties fo:background-color="#cccccc" fo:border="0.06pt solid #000000"/>
-   <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="ce13" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
-   <style:table-cell-properties fo:border="0.06pt solid #000000"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="ce14" style:family="table-cell" style:parent-style-name="Default">
-   <style:table-cell-properties fo:border-bottom="0.06pt solid #000000" fo:background-color="#808080" fo:border-left="none" fo:border-right="none" fo:border-top="0.06pt solid #000000"/>
-   <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-size-complex="8pt" style:font-style-complex="normal"/>
   </style:style>
-  <style:style style:name="ce15" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
+  <style:style style:name="ce15" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
    <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
    <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="ce16" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
+  <style:style style:name="ce16" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
    <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
    <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="ce17" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
-   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
-   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  <style:style style:name="ce17" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N111">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="end" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-size-complex="8pt" style:font-style-complex="normal"/>
   </style:style>
-  <style:style style:name="ce18" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
-   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
-   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  <style:style style:name="ce18" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N111">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="end" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
-  <style:style style:name="ce19" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4"/>
-  <style:style style:name="ce20" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
-   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
-   <style:paragraph-properties fo:text-align="end" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  <style:style style:name="ce19" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="end" fo:margin-left="0mm"/>
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
+  </style:style>
+  <style:style style:name="ce20" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
   <style:style style:name="ce21" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
-   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:background-color="transparent" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
-   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
+   <style:paragraph-properties fo:text-align="end" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="ce22" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
+   <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:background-color="transparent" fo:wrap-option="no-wrap" fo:border="0.06pt solid #000000" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
+   <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce23" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N4">
    <style:table-cell-properties style:glyph-orientation-vertical="0" style:text-align-source="fix" style:repeat-content="false" fo:background-color="transparent" fo:wrap-option="no-wrap" style:direction="ltr" fo:padding="0.71mm" style:rotation-angle="0" style:rotation-align="none" style:shrink-to-fit="false" style:vertical-align="automatic" loext:vertical-justify="auto"/>
    <style:paragraph-properties fo:text-align="center" css3t:text-justify="auto" fo:margin-left="0mm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Ubuntu Light" fo:font-size="10pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+   <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="8pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Ubuntu Light" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce24" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
+   <style:text-properties style:font-name="Liberation Sans1" fo:font-size="8pt" style:font-size-asian="8pt" style:font-size-complex="8pt"/>
   </style:style>
   <style:page-layout style:name="pm1">
-   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:page-layout-properties fo:page-width="297mm" fo:page-height="210.01mm" style:num-format="1" style:print-orientation="landscape" style:shadow="none" style:writing-mode="lr-tb"/>
    <style:header-style>
     <style:header-footer-properties fo:min-height="7.5mm" fo:margin-left="0mm" fo:margin-right="0mm" fo:margin-bottom="2.5mm"/>
    </style:header-style>
@@ -375,9 +413,7 @@
  </office:automatic-styles>
  <office:master-styles>
   <style:master-page style:name="Default" style:page-layout-name="pm1">
-   <style:header>
-    <text:p><text:sheet-name>???</text:sheet-name></text:p>
-   </style:header>
+   <style:header/>
    <style:header-left style:display="false"/>
    <style:footer>
     <text:p>Página <text:page-number>1</text:page-number></text:p>
@@ -390,7 +426,7 @@
      <text:p><text:sheet-name>???</text:sheet-name> (<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2019-04-09">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="05:37:53.343692363">00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2019-12-13">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="10:35:40.079729917">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -402,279 +438,277 @@
  </office:master-styles>
  <office:body>
   <office:spreadsheet>
-   <table:table table:name="Hoja1" table:style-name="ta1">
-    <table:table-column table:style-name="co1" table:default-cell-style-name="ce7"/>
-    <table:table-column table:style-name="co2" table:default-cell-style-name="ce7"/>
-    <table:table-column table:style-name="co3" table:default-cell-style-name="ce7"/>
-    <table:table-column table:style-name="co4" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co5" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co6" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co7" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co8" table:number-columns-repeated="10" table:default-cell-style-name="Default"/>
+   <table:table table:name="Hoja1" table:style-name="ta1" table:print="false">
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co2" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co3" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co4" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co6" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co7" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co8" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co9" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co10" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co11" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co12" table:number-columns-repeated="1011" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co12" table:default-cell-style-name="ce20"/>
+    <table:table-header-rows>
+     <table:table-row table:style-name="ro1">
+      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+       <text:p>FECHA</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+       <text:p>COMPROBANTE</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+       <text:p>CLIENTE</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+       <text:p>NUMERO</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+       <text:p>CI</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+       <text:p>CUIT</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce15" office:value-type="string" calcext:value-type="string">
+       <text:p>NETO</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce15" office:value-type="string" calcext:value-type="string">
+       <text:p>IVA 21%</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce15" office:value-type="string" calcext:value-type="string">
+       <text:p>IVA 10,5%</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce15" office:value-type="string" calcext:value-type="string">
+       <text:p>IVA 27%</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce15" office:value-type="string" calcext:value-type="string">
+       <text:p>IIBB</text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="ce22" office:value-type="string" calcext:value-type="string">
+       <text:p>TOTAL</text:p>
+      </table:table-cell>
+      <table:table-cell/>
+      <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
+      <table:table-cell table:number-columns-repeated="1008"/>
+     </table:table-row>
+    </table:table-header-rows>
     <table:table-row table:style-name="ro1">
-     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string" table:number-columns-spanned="5" table:number-rows-spanned="1"><text:p><text:a xlink:href="relatorio://&apos;FACTURACION%20ELECTRONICA%20Punto%20de%20Venta:%20&apos;+str(pos.number)" xlink:type="simple">&apos;FACTURACION ELECTRONICA Punto de Venta: &apos;+str(pos.number)</text:a></text:p>
+     <table:table-cell table:style-name="ce2" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;invoice%20in%20invoices&apos;" xlink:type="simple">for each=&apos;invoice in invoices&apos;</text:a></text:p>
      </table:table-cell>
-     <table:covered-table-cell table:number-columns-repeated="4" table:style-name="ce9"/>
-     <table:table-cell table:number-columns-repeated="12"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce2" office:value-type="string" calcext:value-type="string" table:number-columns-spanned="5" table:number-rows-spanned="1"><text:p><text:a xlink:href="relatorio://format_date(from_date,%20user.language)%20+%20&apos;%20-%20&apos;%20+%20format_date(to_date,%20user.language)" xlink:type="simple">format_date(from_date, user.language) + &apos; - &apos; + format_date(to_date, user.language)</text:a></text:p>
-     </table:table-cell>
-     <table:covered-table-cell table:style-name="Default"/>
-     <table:covered-table-cell table:style-name="ce14" office:value-type="string" calcext:value-type="string">
-      <text:p><text:s/>- </text:p>
-     </table:covered-table-cell>
-     <table:covered-table-cell table:number-columns-repeated="2" table:style-name="ce14"/>
-     <table:table-cell table:number-columns-repeated="12"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="3"/>
-     <table:table-cell table:number-columns-repeated="14"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro3">
-     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
-      <text:p>Fecha</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
-      <text:p>Comprobante</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce15" office:value-type="string" calcext:value-type="string">
-      <text:p>Número</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
-      <text:p>Razón Social</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
-      <text:p>Condición ante IVA</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
-      <text:p>Jurisdicción</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
-      <text:p>CUIT</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string">
-      <text:p>NETO</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string">
-      <text:p>IVA 21%</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string">
-      <text:p>IVA 10,5%</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string">
-      <text:p>IVA 27%</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string">
-      <text:p>IIBB</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string">
-      <text:p>IIB Desc</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce21" office:value-type="string" calcext:value-type="string">
-      <text:p>TOTAL</text:p>
-     </table:table-cell>
-     <table:table-cell/>
-     <table:table-cell table:style-name="ce10" table:number-columns-repeated="2"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro3">
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;invoice%20in%20invoices&apos;" xlink:type="simple">for each=&apos;invoice in invoices&apos;</text:a></text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce10"/>
+     <table:table-cell table:style-name="ce8"/>
+     <table:table-cell table:style-name="ce13"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce16"/>
-     <table:table-cell table:style-name="ce10" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce18"/>
-     <table:table-cell table:style-name="ce20"/>
-     <table:table-cell table:style-name="ce18" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce22"/>
+     <table:table-cell table:style-name="ce21"/>
+     <table:table-cell table:style-name="ce16" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce23"/>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce10" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1008"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://format_date(invoice.invoice_date,%20invoice.company.party.lang)" xlink:type="simple">format_date(invoice.invoice_date, invoice.company.party.lang)</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://format_date(invoice.invoice_date,%20invoice.company.party.lang)" xlink:type="simple">format_date(invoice.invoice_date, invoice.company.party.lang)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.invoice_type.invoice_type_string" xlink:type="simple">invoice.invoice_type.invoice_type_string</text:a></text:p>
+     <table:table-cell table:style-name="ce9" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.invoice_type.invoice_type_string" xlink:type="simple">invoice.invoice_type.invoice_type_string</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.number" xlink:type="simple">invoice.number</text:a></text:p>
+     <table:table-cell table:style-name="ce9" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.party.name" xlink:type="simple">invoice.party.name</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.party.name" xlink:type="simple">invoice.party.name</text:a></text:p>
+     <table:table-cell table:style-name="ce9" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.number" xlink:type="simple">invoice.number</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.party.iva_condition_string" xlink:type="simple">invoice.party.iva_condition_string</text:a></text:p>
+     <table:table-cell table:style-name="ce14" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva_condition(invoice)" xlink:type="simple">get_iva_condition(invoice)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.subdivision" xlink:type="simple">invoice.subdivision</text:a></text:p>
+     <table:table-cell table:style-name="ce14" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_party_tax_identifier(invoice)" xlink:type="simple">get_party_tax_identifier(invoice)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.party.vat_number" xlink:type="simple">invoice.party.vat_number</text:a></text:p>
+     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_amount(invoice,%20&apos;untaxed_amount&apos;)" xlink:type="simple">get_amount(invoice, &apos;untaxed_amount&apos;)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.untaxed_amount" xlink:type="simple">invoice.untaxed_amount</text:a></text:p>
+     <table:table-cell table:style-name="ce18" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.21&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.21&apos;)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.21&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.21&apos;)</text:a></text:p>
+     <table:table-cell table:style-name="ce18" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.105&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.105&apos;)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.105&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.105&apos;)</text:a></text:p>
+     <table:table-cell table:style-name="ce18" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.27&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.27&apos;)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.27&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.27&apos;)</text:a></text:p>
+     <table:table-cell table:style-name="ce18" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iibb(invoice)" xlink:type="simple">get_iibb(invoice)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iibb(invoice)" xlink:type="simple">get_iibb(invoice)</text:a></text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iibb_name(invoice)" xlink:type="simple">get_iibb_name(invoice)</text:a></text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://invoice.total_amount" xlink:type="simple">invoice.total_amount</text:a></text:p>
+     <table:table-cell table:style-name="ce17" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_amount(invoice,%20&apos;total_amount&apos;)" xlink:type="simple">get_amount(invoice, &apos;total_amount&apos;)</text:a></text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce11"/>
-     <table:table-cell/>
+     <table:table-cell table:style-name="ce24"/>
+     <table:table-cell table:number-columns-repeated="1009"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="14"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="3"/>
-     <table:table-cell table:number-columns-repeated="14"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="3"/>
-     <table:table-cell table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://total_untaxed_amount" xlink:type="simple">total_untaxed_amount</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce2" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://total_amount" xlink:type="simple">total_amount</text:a></text:p>
+     <table:table-cell table:style-name="ce18"/>
+     <table:table-cell table:number-columns-repeated="1016"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="6"/>
+     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://totales_untaxed_amount" xlink:type="simple">totales_untaxed_amount</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://totales_iva21" xlink:type="simple">totales_iva21</text:a></text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://totales_iva105" xlink:type="simple">totales_iva105</text:a></text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://totales_iva27" xlink:type="simple">totales_iva27</text:a></text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce19"/>
+     <table:table-cell table:style-name="ce19" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://totales_amount" xlink:type="simple">totales_amount</text:a></text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="3"/>
-     <table:table-cell table:number-columns-repeated="14"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="6"/>
+     <table:table-cell table:style-name="ce20" table:number-columns-repeated="6"/>
+     <table:table-cell table:number-columns-repeated="1011"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="1023"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>Totales por impuesto</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:style-name="ce5" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell/>
-     <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce10" office:value-type="string" calcext:value-type="string">
       <text:p>Total Neto</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce10" office:value-type="string" calcext:value-type="string">
       <text:p>Total percibido</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;tax%20in%20taxes&apos;" xlink:type="simple">for each=&apos;tax in taxes&apos;</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;tax%20in%20taxes&apos;" xlink:type="simple">for each=&apos;tax in taxes&apos;</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://tax.name" xlink:type="simple">tax.name</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://tax.name" xlink:type="simple">tax.name</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce13" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_neto_by_tax(tax,%20invoices)" xlink:type="simple">get_sum_neto_by_tax(tax, invoices)</text:a></text:p>
+     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_neto_by_tax(tax,%20invoices)" xlink:type="simple">get_sum_neto_by_tax(tax, invoices)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce13" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_percibido_by_tax(tax,%20invoices)" xlink:type="simple">get_sum_percibido_by_tax(tax, invoices)</text:a></text:p>
+     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_percibido_by_tax(tax,%20invoices)" xlink:type="simple">get_sum_percibido_by_tax(tax, invoices)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="3"/>
-     <table:table-cell table:number-columns-repeated="14"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="1023"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>Totales por categoría IVA</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:style-name="ce5" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell/>
-     <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce10" office:value-type="string" calcext:value-type="string">
       <text:p>Total Neto</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce10" office:value-type="string" calcext:value-type="string">
       <text:p>Total percibido</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;iva_condition%20in%20iva_conditions&apos;" xlink:type="simple">for each=&apos;iva_condition in iva_conditions&apos;</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;iva_condition%20in%20iva_conditions&apos;" xlink:type="simple">for each=&apos;iva_condition in iva_conditions&apos;</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://iva_condition" xlink:type="simple">iva_condition</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://format_ci(iva_condition)" xlink:type="simple">format_ci(iva_condition)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce13" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_neto_by_iva_condition(iva_condition,%20invoices)" xlink:type="simple">get_sum_neto_by_iva_condition(iva_condition, invoices)</text:a></text:p>
+     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_neto_by_iva_condition(iva_condition,%20invoices)" xlink:type="simple">get_sum_neto_by_iva_condition(iva_condition, invoices)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce13" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_percibido_by_iva_condition(iva_condition,%20invoices)" xlink:type="simple">get_sum_percibido_by_iva_condition(iva_condition, invoices)</text:a></text:p>
+     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_percibido_by_iva_condition(iva_condition,%20invoices)" xlink:type="simple">get_sum_percibido_by_iva_condition(iva_condition, invoices)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="Default" table:number-columns-repeated="3"/>
-     <table:table-cell table:number-columns-repeated="14"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="1023"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>Totales por categoría y alícuotas</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:style-name="ce7" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell/>
-     <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce10" office:value-type="string" calcext:value-type="string">
       <text:p>Total Neto</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce12" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce10" office:value-type="string" calcext:value-type="string">
       <text:p>Total percibido</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;iva_condition%20in%20iva_conditions&apos;" xlink:type="simple">for each=&apos;iva_condition in iva_conditions&apos;</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;iva_condition%20in%20iva_conditions&apos;" xlink:type="simple">for each=&apos;iva_condition in iva_conditions&apos;</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:number-columns-repeated="17"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="3"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;tax%20in%20alicuotas&apos;" xlink:type="simple">for each=&apos;tax in alicuotas&apos;</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://for%20each=&apos;tax%20in%20alicuotas&apos;" xlink:type="simple">for each=&apos;tax in alicuotas&apos;</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://iva_condition%20+%20&apos;%20&apos;%20+%20tax.name" xlink:type="simple">iva_condition + &apos; &apos; + tax.name</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://format_ci(iva_condition)%20+%20&apos;%20&apos;%20+%20tax.name" xlink:type="simple">format_ci(iva_condition) + &apos; &apos; + tax.name</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce13" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_neto_by_tax_and_iva_condition(tax,%20iva_condition,%20invoices)" xlink:type="simple">get_sum_neto_by_tax_and_iva_condition(tax, iva_condition, invoices)</text:a></text:p>
+     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_neto_by_tax_and_iva_condition(tax,%20iva_condition,%20invoices)" xlink:type="simple">get_sum_neto_by_tax_and_iva_condition(tax, iva_condition, invoices)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce13" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_percibido_by_tax_and_iva_condition(tax,%20iva_condition,%20invoices)" xlink:type="simple">get_sum_percibido_by_tax_and_iva_condition(tax, iva_condition, invoices)</text:a></text:p>
+     <table:table-cell table:style-name="ce11" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_sum_percibido_by_tax_and_iva_condition(tax,%20iva_condition,%20invoices)" xlink:type="simple">get_sum_percibido_by_tax_and_iva_condition(tax, iva_condition, invoices)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="14"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio:///for" xlink:type="simple">/for</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="16"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="1020"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1" table:number-rows-repeated="1048548">
+     <table:table-cell table:number-columns-repeated="1023"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="1023"/>
     </table:table-row>
    </table:table>
    <table:named-expressions/>
