@@ -209,7 +209,6 @@ Execute subdiario sale report::
     >>> subdiario_sale = Wizard('subdiario.sale')
     >>> subdiario_sale.form.from_date = period.start_date
     >>> subdiario_sale.form.to_date = period.end_date
-    >>> subdiario_sale.form.pos = pos
     >>> subdiario_sale.execute('print_')
     >>> extension, content, _, name = subdiario_sale.actions[0]
     >>> # content
@@ -221,7 +220,6 @@ Execute subdiario sale report::
     >>> subdiario_sale = Wizard('subdiario.sale.type')
     >>> subdiario_sale.form.from_date = period.start_date
     >>> subdiario_sale.form.to_date = period.end_date
-    >>> subdiario_sale.form.pos = pos
     >>> subdiario_sale.execute('print_')
     >>> extension, content, _, name = subdiario_sale.actions[0]
     >>> # content
@@ -233,7 +231,6 @@ Execute subdiario sale report::
     >>> subdiario_sale = Wizard('subdiario.sale.subdivision')
     >>> subdiario_sale.form.from_date = period.start_date
     >>> subdiario_sale.form.to_date = period.end_date
-    >>> subdiario_sale.form.pos = pos
     >>> subdiario_sale.execute('print_')
     >>> extension, content, _, name = subdiario_sale.actions[0]
     >>> # content
