@@ -6,8 +6,8 @@ this repository contains the full copyright notices and license terms. -->
     <field name="from_date"/>
     <label name="to_date"/>
     <field name="to_date"/>
-    <label name="pos"/>
-    <field name="pos" widget="selection"/>
     <label name="company"/>
     <field name="company"/>
+    <label name="pos"/>
+    <field name="pos" colspan="4"/>
 </form>
