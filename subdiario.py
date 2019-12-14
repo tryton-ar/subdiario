@@ -62,10 +62,10 @@ class Subdiario(object):
     @classmethod
     def get_party_tax_identifier(cls, invoice):
         code = ''
-        if invoice.party_tax_identifier:
-            code = invoice.party_tax_identifier.code
-        elif invoice.party.vat_number:
+        if invoice.party.vat_number:
             code = invoice.party.vat_number
+        elif invoice.party.vat_number_afip_foreign:
+            code = invoice.party.vat_number_afip_foreign
         else:
             for identifier in invoice.party.identifiers:
                 if identifier.type == 'ar_dni':
