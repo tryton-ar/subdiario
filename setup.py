@@ -9,6 +9,12 @@ import re
 from configparser import ConfigParser
 from setuptools import setup
 
+MODULE2PREFIX = {
+    'account_invoice_ar': 'trytonar',
+    'party_ar': 'trytonar',
+    'citi_afip': 'trytonar',
+    }
+
 
 def read(fname):
     return io.open(
@@ -17,7 +23,12 @@ def read(fname):
 
 
 def get_require_version(name):
-    require = '%s >= %s.%s, < %s.%s'
+    if name in LINKS:
+        return '%s @ %s' % (name, LINKS[name])
+    if minor_version % 2:
+        require = '%s >= %s.%s.dev0, < %s.%s'
+    else:
+        require = '%s >= %s.%s, < %s.%s'
     require %= (name, major_version, minor_version,
         major_version, minor_version + 1)
     return require
@@ -38,37 +49,28 @@ name = 'trytonar_subdiario'
 download_url = 'https://github.com/tryton-ar/subdiario/tree/%s.%s' % (
     major_version, minor_version)
 
+LINKS = {
+    'trytonar_account_invoice_ar': ('git+https://github.com/tryton-ar/'
+        'account_invoice_ar.git@%s.%s#egg=trytonar_account_invoice_ar-%s.%s' %
+        (major_version, minor_version, major_version, minor_version)),
+    'trytonar_party_ar': ('git+https://github.com/tryton-ar/'
+        'party_ar.git@%s.%s#egg=trytonar_party_ar-%s.%s' %
+        (major_version, minor_version, major_version, minor_version)),
+    'trytonar_citi_afip': ('git+https://github.com/tryton-ar/'
+        'citi_afip.git@%s.%s#egg=trytonar_citi_afip-%s.%s' %
+        (major_version, minor_version, major_version, minor_version)),
+    }
+
 requires = []
 for dep in info.get('depends', []):
-    if dep == 'account_invoice_ar':
-        requires.append(get_require_version('trytonar_%s' % dep))
-    elif dep == 'party_ar':
-        requires.append(get_require_version('trytonar_%s' % dep))
-    elif dep == 'citi_afip':
-        requires.append(get_require_version('trytonar_%s' % dep))
-    elif not re.match(r'(ir|res)(\W|$)', dep):
-        requires.append(get_require_version('trytond_%s' % dep))
+    if not re.match(r'(ir|res)(\W|$)', dep):
+        module_name = '%s_%s' % (MODULE2PREFIX.get(dep, 'trytond'), dep)
+        requires.append(get_require_version(module_name))
+
 requires.append(get_require_version('trytond'))
-requires.append('httplib2')
-requires.append('pyafipws')
-requires.append('pysimplesoap')
-requires.append('unidecode >= 1.0.23')
 
 tests_require = [get_require_version('proteus')]
-dependency_links = [
-    'https://github.com/tryton-ar/account_invoice_ar/tarball/%s.%s#egg=trytonar_account_invoice_ar-%s.%s' \
-        % (major_version, minor_version, major_version, minor_version),
-    'https://github.com/tryton-ar/party_ar/tarball/%s.%s#egg=trytonar_party_ar-%s.%s' \
-        % (major_version, minor_version, major_version, minor_version),
-    'https://github.com/tryton-ar/citi_afip/tarball/%s.%s#egg=trytonar_citi_afip-%s.%s' \
-        % (major_version, minor_version, major_version, minor_version),
-    'https://github.com/tryton-ar/account_ar/tarball/%s.%s#egg=trytonar_account_ar-%s.%s' \
-        % (major_version, minor_version, major_version, minor_version),
-    'https://github.com/tryton-ar/bank_ar/tarball/%s.%s#egg=trytonar_bank_ar-%s.%s' \
-        % (major_version, minor_version, major_version, minor_version),
-    'https://github.com/reingart/pyafipws/tarball/py3k#egg=pyafipws',
-    'https://github.com/pysimplesoap/pysimplesoap/tarball/stable_py3k#egg=pysimplesoap',
-    ]
+dependency_links = list(LINKS.values())
 
 setup(name=name,
     version=version,
@@ -83,31 +85,33 @@ setup(name=name,
         'trytond.modules.subdiario.tests',
         ],
     package_data={
-        'trytond.modules.subdiario': (info.get('xml', [])
-            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fods']),
+        'trytond.modules.subdiario': (info.get('xml', []) + [
+            'tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fods']),
         },
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Plugins',
         'Framework :: Tryton',
         'Intended Audience :: Developers',
         'Intended Audience :: Financial and Insurance Industry',
         'Intended Audience :: Legal Industry',
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+        'License :: OSI Approved :: GNU General Public License v3 or later'
+        ' (GPLv3+)',
         'Natural Language :: English',
         'Natural Language :: Spanish',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Office/Business',
         'Topic :: Office/Business :: Financial :: Accounting',
         ],
     license='GPL-3',
-    python_requires='>=3.4',
+    python_requires='>=3.5',
     install_requires=requires,
     dependency_links=dependency_links,
     zip_safe=False,
