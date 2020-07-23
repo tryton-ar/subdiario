@@ -8,6 +8,5 @@ this repository contains the full copyright notices and license terms. -->
     <field name="to_date"/>
     <label name="company"/>
     <field name="company"/>
-    <label name="pos"/>
     <field name="pos" colspan="4"/>
 </form>

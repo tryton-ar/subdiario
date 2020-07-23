@@ -11,6 +11,7 @@ from decimal import Decimal
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 
+
 class Subdiario(object):
 
     @classmethod
@@ -23,11 +24,10 @@ class Subdiario(object):
                 first, second = iva_condition.split('_')
             else:
                 first, second = iva_condition.split(' ')
-            return  '%s%s' % (first[:1].upper(), second[:1].upper())
+            return '%s%s' % (first[:1].upper(), second[:1].upper())
 
     @classmethod
     def get_amount(cls, invoice, field):
-        Currency = Pool().get('currency.currency')
         value = getattr(invoice, field)
         amount = value
         if invoice.currency != invoice.company.currency:
@@ -39,7 +39,7 @@ class Subdiario(object):
         Currency = Pool().get('currency.currency')
         if invoice.pos and invoice.pos.pos_type == 'electronic':
             afip_tr, = [tr for tr in invoice.transactions
-                if tr.pyafipws_result=='A']
+                if tr.pyafipws_result == 'A']
             request = SimpleXMLElement(unidecode(afip_tr.pyafipws_xml_request))
             if invoice.pos.pyafipws_electronic_invoice_service == 'wsfex':
                 ctz = Decimal(str(request('Moneda_ctz')))
@@ -56,8 +56,8 @@ class Subdiario(object):
 
     @classmethod
     def get_iva_condition(cls, invoice):
-        return (cls.format_ci(invoice.party_iva_condition
-                or invoice.party.iva_condition))
+        return cls.format_ci(invoice.party_iva_condition or
+            invoice.party.iva_condition)
 
     @classmethod
     def get_party_tax_identifier(cls, invoice):
@@ -81,8 +81,9 @@ class Subdiario(object):
     def get_iva(cls, invoice, rate, group_tax='gravado'):
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if (invoice_tax.tax.rate and invoice_tax.tax.rate == Decimal(rate)
-                    and invoice_tax.tax.group.afip_kind == 'gravado'):
+            if (invoice_tax.tax.rate and
+                    invoice_tax.tax.rate == Decimal(rate) and
+                    invoice_tax.tax.group.afip_kind == 'gravado'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency != invoice.company.currency:
                     amount += cls.get_secondary_amount(invoice, tax_amount)
@@ -119,7 +120,8 @@ class Subdiario(object):
     def get_other_taxes(cls, invoice):
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group.afip_kind not in ('gravado', 'provincial'):
+            if invoice_tax.tax.group.afip_kind not in (
+                    'gravado', 'provincial'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency != invoice.company.currency:
                     amount += cls.get_secondary_amount(invoice, tax_amount)
@@ -135,7 +137,8 @@ class Subdiario(object):
                 if invoice_tax.tax == tax:
                     untaxed_amount = invoice_tax.base
                     if invoice.currency != invoice.company.currency:
-                        amount += cls.get_secondary_amount(invoice, untaxed_amount)
+                        amount += cls.get_secondary_amount(invoice,
+                            untaxed_amount)
                     else:
                         amount += invoice.currency.round(untaxed_amount)
         return amount
@@ -158,8 +161,8 @@ class Subdiario(object):
         amount = Decimal('0')
 
         for invoice in invoices:
-            party_iva_condition = (invoice.party_iva_condition
-                or invoice.party.iva_condition)
+            party_iva_condition = (invoice.party_iva_condition or
+                invoice.party.iva_condition)
             if party_iva_condition == iva_condition:
                 untaxed_amount = invoice.untaxed_amount
                 if invoice.currency != invoice.company.currency:
@@ -172,8 +175,8 @@ class Subdiario(object):
     def get_sum_percibido_by_iva_condition(cls, iva_condition, invoices):
         amount = Decimal('0')
         for invoice in invoices:
-            party_iva_condition = (invoice.party_iva_condition
-                or invoice.party.iva_condition)
+            party_iva_condition = (invoice.party_iva_condition or
+                invoice.party.iva_condition)
             if party_iva_condition == iva_condition:
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax.group.afip_kind == 'gravado':
@@ -190,8 +193,8 @@ class Subdiario(object):
             invoices):
         amount = Decimal('0')
         for invoice in invoices:
-            party_iva_condition = (invoice.party_iva_condition
-                or invoice.party.iva_condition)
+            party_iva_condition = (invoice.party_iva_condition or
+                invoice.party.iva_condition)
             if party_iva_condition == iva_condition:
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax == tax:
@@ -208,8 +211,8 @@ class Subdiario(object):
             invoices):
         amount = Decimal('0')
         for invoice in invoices:
-            party_iva_condition = (invoice.party_iva_condition
-                or invoice.party.iva_condition)
+            party_iva_condition = (invoice.party_iva_condition or
+                invoice.party.iva_condition)
             if party_iva_condition == iva_condition:
                 for invoice_tax in invoice.taxes:
                     if invoice_tax.tax == tax:

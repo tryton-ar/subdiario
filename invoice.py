@@ -16,17 +16,16 @@ _ZERO = Decimal('0.0')
 
 
 __all__ = ['Invoice', 'SubdiarioPurchaseStart', 'SubdiarioSaleStart',
-           'SubdiarioPurchase', 'SubdiarioSale', 'SubdiarioPurchaseReport',
-           'SubdiarioSaleReport', 'SubdiarioSaleType',
-           'SubdiarioSaleTypeReport', 'SubdiarioSaleSubdivision',
-           'SubdiarioSaleSubdivisionReport']
+    'SubdiarioPurchase', 'SubdiarioSale', 'SubdiarioPurchaseReport',
+    'SubdiarioSaleReport', 'SubdiarioSaleType', 'SubdiarioSaleTypeReport',
+    'SubdiarioSaleSubdivision', 'SubdiarioSaleSubdivisionReport']
 
 
 class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
+
     subdivision = fields.Function(fields.Char('Subdivision'),
-                                  'get_subdivision',
-                                  searcher='search_subdivision')
+        'get_subdivision', searcher='search_subdivision')
     address = fields.Function(fields.Char('Address'), 'get_address')
 
     @classmethod
@@ -120,23 +119,23 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
-        ], order=[('invoice_date', 'ASC')])
+            ], order=[('invoice_date', 'ASC')])
 
         taxes = Tax.search([
             ('group.kind', 'in', ['purchase', 'both']),
             ('active', 'in', [True, False]),
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         alicuotas = Tax.search([
             ('group.kind', '=', 'purchase'),
             ('group.afip_kind', '=', 'gravado'),
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         iibb_taxes = Tax.search([
             ('group.kind', 'in', ['purchase', 'both']),
             ('group.afip_kind', '=', 'provincial'),
             ('active', 'in', [True, False]),
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         company = Company(data['company'])
         for invoice in invoices:
@@ -154,7 +153,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
         subdivisions = Subdivision.search([
             ('country.code', '=', 'AR')
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         report_context = super(SubdiarioPurchaseReport,
             cls).get_context(records, data)
@@ -210,7 +209,7 @@ class SubdiarioSaleStart(ModelView):
     from_date = fields.Date('From Date', required=True)
     to_date = fields.Date('To Date', required=True)
     company = fields.Many2One('company.company', 'Company', required=True)
-    pos = fields.Many2Many('account.pos', None, None, 'Point of Sale',
+    pos = fields.Many2Many('account.pos', None, None, 'Points of Sale',
         required=True, help="Por defecto puntos de venta electronicos")
 
     @staticmethod
@@ -236,7 +235,7 @@ class SubdiarioSaleStart(ModelView):
             ('pos_type', '=', 'electronic'),
             ('pos_do_not_report', '=', False),
             ('company', '=', company_id),
-        ])
+            ])
         return [p.id for p in pos]
 
 
@@ -270,7 +269,6 @@ class SubdiarioSaleReport(Report, Subdiario):
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
         Company = pool.get('company.company')
-        Pos = pool.get('account.pos')
         total_amount = _ZERO
         total_untaxed_amount = _ZERO
         totales_amount = _ZERO
@@ -309,12 +307,12 @@ class SubdiarioSaleReport(Report, Subdiario):
         taxes = Tax.search([
             ('group.kind', 'in', ['sale', 'both']),
             ('active', 'in', [True, False]),
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         alicuotas = Tax.search([
             ('group.kind', '=', 'sale'),
             ('group.afip_kind', '=', 'gravado'),
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         iva_conditions = [
             'responsable_inscripto',
@@ -333,7 +331,8 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['format_ci'] = cls.format_ci
         report_context['get_iva'] = cls.get_iva
         report_context['get_iva_condition'] = cls.get_iva_condition
-        report_context['get_party_tax_identifier'] = cls.get_party_tax_identifier
+        report_context['get_party_tax_identifier'] = (
+            cls.get_party_tax_identifier)
         report_context['get_amount'] = cls.get_amount
         report_context['get_account'] = cls.get_account
         report_context['get_iibb'] = cls.get_iibb
@@ -347,16 +346,16 @@ class SubdiarioSaleReport(Report, Subdiario):
         report_context['totales_iva21'] = totales_iva21
         report_context['totales_iva27'] = totales_iva27
         report_context['get_sum_neto_by_tax'] = cls.get_sum_neto_by_tax
-        report_context['get_sum_percibido_by_tax'] = \
-            cls.get_sum_percibido_by_tax
-        report_context['get_sum_neto_by_iva_condition'] = \
-            cls.get_sum_neto_by_iva_condition
-        report_context['get_sum_percibido_by_iva_condition'] = \
-            cls.get_sum_percibido_by_iva_condition
-        report_context['get_sum_neto_by_tax_and_iva_condition'] = \
-            cls.get_sum_neto_by_tax_and_iva_condition
-        report_context['get_sum_percibido_by_tax_and_iva_condition'] = \
-            cls.get_sum_percibido_by_tax_and_iva_condition
+        report_context['get_sum_percibido_by_tax'] = (
+            cls.get_sum_percibido_by_tax)
+        report_context['get_sum_neto_by_iva_condition'] = (
+            cls.get_sum_neto_by_iva_condition)
+        report_context['get_sum_percibido_by_iva_condition'] = (
+            cls.get_sum_percibido_by_iva_condition)
+        report_context['get_sum_neto_by_tax_and_iva_condition'] = (
+            cls.get_sum_neto_by_tax_and_iva_condition)
+        report_context['get_sum_percibido_by_tax_and_iva_condition'] = (
+            cls.get_sum_percibido_by_tax_and_iva_condition)
         return report_context
 
 
@@ -389,9 +388,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Company = pool.get('company.company')
-        Pos = pool.get('account.pos')
         PosSequence = pool.get('account.pos.sequence')
-        total_amount = Decimal('0')
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
@@ -410,7 +407,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         company = Company(data['company'])
         pos_sequences = PosSequence.search([
             ('pos', 'in', data['pos'])
-        ])
+            ])
 
         report_context = super(SubdiarioSaleTypeReport,
             cls).get_context(records, data)
@@ -422,7 +419,8 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         report_context['get_iva'] = cls.get_iva
         report_context['get_iibb'] = cls.get_iibb
         report_context['get_iva_condition'] = cls.get_iva_condition
-        report_context['get_party_tax_identifier'] = cls.get_party_tax_identifier
+        report_context['get_party_tax_identifier'] = (
+            cls.get_party_tax_identifier)
         report_context['get_amount'] = cls.get_amount
         report_context['format_ci'] = cls.format_ci
         return report_context
@@ -456,9 +454,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Company = pool.get('company.company')
-        Pos = pool.get('account.pos')
         Subdivision = pool.get('country.subdivision')
-        total_amount = Decimal('0')
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
@@ -478,7 +474,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         # search subdivisions of Argentina
         subdivisions = Subdivision.search([
             ('country.code', '=', 'AR')
-        ], order=[('name', 'ASC')])
+            ], order=[('name', 'ASC')])
 
         report_context = super(SubdiarioSaleSubdivisionReport,
             cls).get_context(records, data)
@@ -490,7 +486,8 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         report_context['get_iva'] = cls.get_iva
         report_context['get_iibb'] = cls.get_iibb
         report_context['get_iva_condition'] = cls.get_iva_condition
-        report_context['get_party_tax_identifier'] = cls.get_party_tax_identifier
+        report_context['get_party_tax_identifier'] = (
+            cls.get_party_tax_identifier)
         report_context['get_amount'] = cls.get_amount
         report_context['format_ci'] = cls.format_ci
         return report_context
