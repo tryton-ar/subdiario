@@ -51,7 +51,7 @@ class Invoice(metaclass=PoolMeta):
 
 
 class SubdiarioPurchaseStart(ModelView):
-    'SubdiarioPurchaseStart'
+    'Subdiario de Compras'
     __name__ = 'subdiario.purchase.start'
 
     from_date = fields.Date('From Date', required=True)
@@ -74,7 +74,7 @@ class SubdiarioPurchaseStart(ModelView):
 
 
 class SubdiarioPurchase(Wizard):
-    'SubdiarioPurchase '
+    'Subdiario de Compras'
     __name__ = 'subdiario.purchase'
 
     start = StateView('subdiario.purchase.start',
@@ -94,7 +94,7 @@ class SubdiarioPurchase(Wizard):
 
 
 class SubdiarioPurchaseReport(Report, Subdiario):
-    'SubdiarioPurchaseReport'
+    'Subdiario de Compras'
     __name__ = 'subdiario.purchase_report'
 
     @classmethod
@@ -197,7 +197,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
 
 
 class SubdiarioSaleStart(ModelView):
-    'SubdiarioSaleStart'
+    'Subdiario de Ventas'
     __name__ = 'subdiario.sale.start'
 
     from_date = fields.Date('From Date', required=True)
@@ -233,7 +233,7 @@ class SubdiarioSaleStart(ModelView):
 
 
 class SubdiarioSale(Wizard):
-    'Post Invoices'
+    'Subdiario de Ventas'
     __name__ = 'subdiario.sale'
 
     start = StateView('subdiario.sale.start',
@@ -254,7 +254,7 @@ class SubdiarioSale(Wizard):
 
 
 class SubdiarioSaleReport(Report, Subdiario):
-    'SubdiarioSaleReport'
+    'Subdiario de Ventas'
     __name__ = 'subdiario.sale_report'
 
     @classmethod
@@ -354,7 +354,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 
 
 class SubdiarioSaleType(Wizard):
-    'SubdiarioSaleType'
+    'Subdiario de Ventas por tipo de comprobante'
     __name__ = 'subdiario.sale.type'
 
     start = StateView('subdiario.sale.start',
@@ -375,7 +375,7 @@ class SubdiarioSaleType(Wizard):
 
 
 class SubdiarioSaleTypeReport(Report, Subdiario):
-    'SubdiarioSaleTypeReport'
+    'Subdiario de Ventas por tipo de comprobante'
     __name__ = 'subdiario.sale_type_report'
 
     @classmethod
@@ -421,7 +421,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
 
 
 class SubdiarioSaleSubdivision(Wizard):
-    'Post Invoices'
+    'Subdiario de Ventas por jurisdicción'
     __name__ = 'subdiario.sale.subdivision'
 
     start = StateView('subdiario.sale.start',
@@ -442,6 +442,7 @@ class SubdiarioSaleSubdivision(Wizard):
 
 
 class SubdiarioSaleSubdivisionReport(Report, Subdiario):
+    'Subdiario de Ventas por jurisdicción'
     __name__ = 'subdiario.sale_subdivision_report'
 
     @classmethod
