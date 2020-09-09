@@ -155,8 +155,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('country.code', '=', 'AR')
             ], order=[('name', 'ASC')])
 
-        report_context = super(SubdiarioPurchaseReport,
-            cls).get_context(records, data)
+        report_context = super().get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -322,8 +321,7 @@ class SubdiarioSaleReport(Report, Subdiario):
             'no_alcanzado',
             ]
 
-        report_context = super(SubdiarioSaleReport,
-            cls).get_context(records, data)
+        report_context = super().get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -409,8 +407,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
             ('pos', 'in', data['pos'])
             ])
 
-        report_context = super(SubdiarioSaleTypeReport,
-            cls).get_context(records, data)
+        report_context = super().get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -476,8 +473,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
             ('country.code', '=', 'AR')
             ], order=[('name', 'ASC')])
 
-        report_context = super(SubdiarioSaleSubdivisionReport,
-            cls).get_context(records, data)
+        report_context = super().get_context(records, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
