@@ -21,7 +21,7 @@
         <record model="ir.action.report" id="report_subdiario_purchase">
             <field name="name">Subdiario de Compras</field>
             <field name="report_name">subdiario.purchase_report</field>
-            <field name="report">subdiario/purchase.fods</field>
+            <field name="report">subdiario/report/purchase.fods</field>
             <field name="template_extension">ods</field>
         </record>
 
@@ -46,7 +46,7 @@
         <record model="ir.action.report" id="report_subdiario_sale">
             <field name="name">Subdiario de Ventas</field>
             <field name="report_name">subdiario.sale_report</field>
-            <field name="report">subdiario/sale.fods</field>
+            <field name="report">subdiario/report/sale.fods</field>
             <field name="template_extension">ods</field>
         </record>
 
@@ -71,7 +71,7 @@
         <record model="ir.action.report" id="report_subdiario_sale_type">
             <field name="name">Subdiario de Ventas por tipo de comprobante</field>
             <field name="report_name">subdiario.sale_type_report</field>
-            <field name="report">subdiario/sale_type.fods</field>
+            <field name="report">subdiario/report/sale_type.fods</field>
             <field name="template_extension">ods</field>
         </record>
 
@@ -90,7 +90,7 @@
         <record model="ir.action.report" id="report_subdiario_sale_subdivision">
             <field name="name">Subdiario de Ventas por jurisdicción</field>
             <field name="report_name">subdiario.sale_subdivision_report</field>
-            <field name="report">subdiario/sale_subdivision.fods</field>
+            <field name="report">subdiario/report/sale_subdivision.fods</field>
             <field name="template_extension">ods</field>
         </record>
 
