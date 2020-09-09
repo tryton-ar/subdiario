@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-# This file is part of subdiario module for Tryton.
+# This file is part of the subdiario module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
 import stdnum.ar.cuit as cuit
@@ -159,7 +159,6 @@ class Subdiario(object):
     @classmethod
     def get_sum_neto_by_iva_condition(cls, iva_condition, invoices):
         amount = Decimal('0')
-
         for invoice in invoices:
             party_iva_condition = (invoice.party_iva_condition or
                 invoice.party.iva_condition)

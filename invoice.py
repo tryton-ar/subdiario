@@ -1,19 +1,18 @@
 # -*- coding: utf8 -*-
-# This file is part of subdiario module for Tryton.
+# This file is part of the subdiario module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
-
-from trytond.model import fields, ModelView
-from trytond.pool import Pool, PoolMeta
-from trytond.wizard import Wizard, StateView, Button, StateReport
-from trytond.transaction import Transaction
-from trytond.report import Report
-
+from datetime import date
 from decimal import Decimal
+
+from trytond.model import ModelView, fields
+from trytond.wizard import Wizard, StateView, StateReport, Button
+from trytond.report import Report
+from trytond.pool import Pool, PoolMeta
+from trytond.transaction import Transaction
 from .subdiario import Subdiario
 
-_ZERO = Decimal('0.0')
-
+_ZERO = Decimal('0')
 
 
 class Invoice(metaclass=PoolMeta):
@@ -26,7 +25,7 @@ class Invoice(metaclass=PoolMeta):
     @classmethod
     def get_address(cls, invoices, name):
         res = {}
-        for invoice in cls.browse(invoices):
+        for invoice in invoices:
             res[invoice.id] = ''
             if invoice.invoice_address:
                 res[invoice.id] = ' '.join(
@@ -36,13 +35,13 @@ class Invoice(metaclass=PoolMeta):
     @classmethod
     def get_subdivision(cls, invoices, name):
         res = {}
-        for invoice in cls.browse(invoices):
+        for invoice in invoices:
             res[invoice.id] = ''
             if invoice.invoice_address:
                 if hasattr(invoice.invoice_address, 'subdivision'):
                     if hasattr(invoice.invoice_address.subdivision, 'name'):
-                        subdivision_name = \
-                            invoice.invoice_address.subdivision.name
+                        subdivision_name = (
+                            invoice.invoice_address.subdivision.name)
                         res[invoice.id] = subdivision_name
         return res
 
@@ -61,9 +60,8 @@ class SubdiarioPurchaseStart(ModelView):
 
     @staticmethod
     def default_from_date():
-        import datetime
         Date = Pool().get('ir.date')
-        return datetime.date(Date.today().year, 1, 1)
+        return date(Date.today().year, 1, 1)
 
     @staticmethod
     def default_to_date():
@@ -78,6 +76,7 @@ class SubdiarioPurchaseStart(ModelView):
 class SubdiarioPurchase(Wizard):
     'SubdiarioPurchase '
     __name__ = 'subdiario.purchase'
+
     start = StateView('subdiario.purchase.start',
         'subdiario.purchase_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
@@ -105,8 +104,9 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         Tax = pool.get('account.tax')
         Company = pool.get('company.company')
         Subdivision = pool.get('country.subdivision')
-        total_amount = Decimal('0')
-        total_untaxed_amount = Decimal('0')
+
+        total_amount = _ZERO
+        total_untaxed_amount = _ZERO
 
         invoices = Invoice.search([
             ('state', 'in', ['posted', 'paid']),
@@ -208,9 +208,8 @@ class SubdiarioSaleStart(ModelView):
 
     @staticmethod
     def default_from_date():
-        import datetime
         Date = Pool().get('ir.date')
-        return datetime.date(Date.today().year, 1, 1)
+        return date(Date.today().year, 1, 1)
 
     @staticmethod
     def default_to_date():
@@ -236,6 +235,7 @@ class SubdiarioSaleStart(ModelView):
 class SubdiarioSale(Wizard):
     'Post Invoices'
     __name__ = 'subdiario.sale'
+
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
@@ -263,6 +263,7 @@ class SubdiarioSaleReport(Report, Subdiario):
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
         Company = pool.get('company.company')
+
         total_amount = _ZERO
         total_untaxed_amount = _ZERO
         totales_amount = _ZERO
@@ -355,6 +356,7 @@ class SubdiarioSaleReport(Report, Subdiario):
 class SubdiarioSaleType(Wizard):
     'SubdiarioSaleType'
     __name__ = 'subdiario.sale.type'
+
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
@@ -421,6 +423,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
 class SubdiarioSaleSubdivision(Wizard):
     'Post Invoices'
     __name__ = 'subdiario.sale.subdivision'
+
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
