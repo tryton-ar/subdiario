@@ -200,7 +200,7 @@ Create supplier invoices::
     >>> invoice.untaxed_amount
     Decimal('100.00')
     >>> invoice.tax_amount
-    Decimal('0.0')
+    Decimal('0')
     >>> invoice.total_amount
     Decimal('100.00')
 
@@ -215,7 +215,7 @@ Execute subdiario sale report::
     >>> extension
     'ods'
     >>> name
-    'Subdiario sale'
+    'Subdiario de Ventas'
 
     >>> subdiario_sale = Wizard('subdiario.sale.type')
     >>> subdiario_sale.form.from_date = period.start_date
@@ -226,7 +226,7 @@ Execute subdiario sale report::
     >>> extension
     'ods'
     >>> name
-    'Subdiario sale type'
+    'Subdiario de Ventas por tipo de comprobante'
 
     >>> subdiario_sale = Wizard('subdiario.sale.subdivision')
     >>> subdiario_sale.form.from_date = period.start_date
@@ -237,7 +237,7 @@ Execute subdiario sale report::
     >>> extension
     'ods'
     >>> name
-    'Subdiario sale subdivision'
+    'Subdiario de Ventas por jurisdicción'
 
     >>> subdiario_purchase = Wizard('subdiario.purchase')
     >>> subdiario_purchase.form.from_date = period.start_date
@@ -248,4 +248,4 @@ Execute subdiario sale report::
     >>> extension
     'ods'
     >>> name
-    'Subdiario purchase'
+    'Subdiario de Compras'
