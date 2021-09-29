@@ -118,9 +118,10 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         total_untaxed_amount = _ZERO
 
         clause = [
-            ('state', 'in', ['posted', 'paid']),
-            ('type', '=', 'in'),
             ('company', '=', data['company']),
+            ('type', '=', 'in'),
+            ['OR', ('state', 'in', ['posted', 'paid']),
+                [('state', '=', 'cancel'), ('number', '!=', None)]],
             ]
         if data['date'] == 'post_date':
             clause.extend([
@@ -292,12 +293,13 @@ class SubdiarioSaleReport(Report, Subdiario):
         totales_iva27 = _ZERO
 
         invoices = Invoice.search([
-            ('state', 'in', ['posted', 'paid']),
+            ('company', '=', data['company']),
             ('type', '=', 'out'),
+            ('pos', 'in', data['pos']),
+            ['OR', ('state', 'in', ['posted', 'paid']),
+                [('state', '=', 'cancel'), ('number', '!=', None)]],
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
-            ('company', '=', data['company']),
-            ('pos', 'in', data['pos']),
             ], order=[
             ('pos', 'ASC'),
             ('invoice_date', 'ASC'),
@@ -405,12 +407,13 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         PosSequence = pool.get('account.pos.sequence')
 
         invoices = Invoice.search([
-            ('state', 'in', ['posted', 'paid']),
+            ('company', '=', data['company']),
             ('type', '=', 'out'),
+            ('pos', 'in', data['pos']),
+            ['OR', ('state', 'in', ['posted', 'paid']),
+                [('state', '=', 'cancel'), ('number', '!=', None)]],
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
-            ('company', '=', data['company']),
-            ('pos', 'in', data['pos']),
             ], order=[
             ('pos', 'ASC'),
             ('invoice_date', 'ASC'),
@@ -472,12 +475,13 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
         Subdivision = pool.get('country.subdivision')
 
         invoices = Invoice.search([
-            ('state', 'in', ['posted', 'paid']),
+            ('company', '=', data['company']),
             ('type', '=', 'out'),
+            ('pos', 'in', data['pos']),
+            ['OR', ('state', 'in', ['posted', 'paid']),
+                [('state', '=', 'cancel'), ('number', '!=', None)]],
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
-            ('company', '=', data['company']),
-            ('pos', 'in', data['pos']),
             ], order=[
             ('pos', 'ASC'),
             ('invoice_date', 'ASC'),
