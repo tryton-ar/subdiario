@@ -54,9 +54,17 @@ class SubdiarioPurchaseStart(ModelView):
     'Subdiario de Compras'
     __name__ = 'subdiario.purchase.start'
 
+    date = fields.Selection([
+        ('date', 'Effective Date'),
+        ('post_date', 'Post Date'),
+        ], 'Use', required=True)
     from_date = fields.Date('From Date', required=True)
     to_date = fields.Date('To Date', required=True)
     company = fields.Many2One('company.company', 'Company', required=True)
+
+    @staticmethod
+    def default_date():
+        return 'post_date'
 
     @staticmethod
     def default_from_date():
@@ -89,6 +97,7 @@ class SubdiarioPurchase(Wizard):
             'company': self.start.company.id,
             'from_date': self.start.from_date,
             'to_date': self.start.to_date,
+            'date': self.start.date,
             }
         return action, data
 
@@ -108,13 +117,23 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         total_amount = _ZERO
         total_untaxed_amount = _ZERO
 
-        invoices = Invoice.search([
+        clause = [
             ('state', 'in', ['posted', 'paid']),
             ('type', '=', 'in'),
-            ('move.date', '>=', data['from_date']),
-            ('move.date', '<=', data['to_date']),
             ('company', '=', data['company']),
-            ], order=[('invoice_date', 'ASC')])
+            ]
+        if data['date'] == 'post_date':
+            clause.extend([
+                ('move.post_date', '>=', data['from_date']),
+                ('move.post_date', '<=', data['to_date']),
+                ])
+        else:  # data['date'] == 'date':
+            clause.extend([
+                ('move.date', '>=', data['from_date']),
+                ('move.date', '<=', data['to_date']),
+                ])
+
+        invoices = Invoice.search(clause, order=[('invoice_date', 'ASC')])
 
         taxes = Tax.search([
             ('group.kind', 'in', ['purchase', 'both']),

@@ -4,6 +4,8 @@
     <field name="from_date"/>
     <label name="to_date"/>
     <field name="to_date"/>
+    <label name="date"/>
+    <field name="date"/>
     <label name="company"/>
     <field name="company"/>
 </form>

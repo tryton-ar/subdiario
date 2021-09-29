@@ -14,6 +14,10 @@ msgctxt "field:subdiario.purchase.start,company:"
 msgid "Company"
 msgstr "Empresa"
 
+msgctxt "field:subdiario.purchase.start,date:"
+msgid "Use"
+msgstr "Utilizar"
+
 msgctxt "field:subdiario.purchase.start,from_date:"
 msgid "From Date"
 msgstr "Desde la fecha"
@@ -973,6 +977,14 @@ msgstr ""
 msgctxt "report:subdiario.sale_type_report:"
 msgid "€"
 msgstr ""
+
+msgctxt "selection:subdiario.purchase.start,date:"
+msgid "Effective Date"
+msgstr "Fecha efectiva"
+
+msgctxt "selection:subdiario.purchase.start,date:"
+msgid "Post Date"
+msgstr "Fecha contabilización"
 
 msgctxt "wizard_button:subdiario.purchase,start,end:"
 msgid "Cancel"
