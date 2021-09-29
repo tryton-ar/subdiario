@@ -107,7 +107,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
     __name__ = 'subdiario.purchase_report'
 
     @classmethod
-    def get_context(cls, records, data):
+    def get_context(cls, records, header, data):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
@@ -170,7 +170,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ('country.code', '=', 'AR')
             ], order=[('name', 'ASC')])
 
-        report_context = super().get_context(records, data)
+        report_context = super().get_context(records, header, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -278,7 +278,7 @@ class SubdiarioSaleReport(Report, Subdiario):
     __name__ = 'subdiario.sale_report'
 
     @classmethod
-    def get_context(cls, records, data):
+    def get_context(cls, records, header, data):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Tax = pool.get('account.tax')
@@ -338,7 +338,7 @@ class SubdiarioSaleReport(Report, Subdiario):
             'no_alcanzado',
             ]
 
-        report_context = super().get_context(records, data)
+        report_context = super().get_context(records, header, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -400,7 +400,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
     __name__ = 'subdiario.sale_type_report'
 
     @classmethod
-    def get_context(cls, records, data):
+    def get_context(cls, records, header, data):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Company = pool.get('company.company')
@@ -426,7 +426,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
             ('pos', 'in', data['pos'])
             ])
 
-        report_context = super().get_context(records, data)
+        report_context = super().get_context(records, header, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
@@ -468,7 +468,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
     __name__ = 'subdiario.sale_subdivision_report'
 
     @classmethod
-    def get_context(cls, records, data):
+    def get_context(cls, records, header, data):
         pool = Pool()
         Invoice = pool.get('account.invoice')
         Company = pool.get('company.company')
@@ -495,7 +495,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
             ('country.code', '=', 'AR')
             ], order=[('name', 'ASC')])
 
-        report_context = super().get_context(records, data)
+        report_context = super().get_context(records, header, data)
         report_context['company'] = company
         report_context['from_date'] = data['from_date']
         report_context['to_date'] = data['to_date']
