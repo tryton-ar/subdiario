@@ -180,6 +180,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         report_context['format_tipo_comprobante'] = cls.format_tipo_comprobante
         report_context['get_gravado'] = cls.get_gravado
         report_context['get_no_gravado'] = cls.get_no_gravado
+        report_context['get_exento'] = cls.get_exento
         report_context['get_iva'] = cls.get_iva
         report_context['get_other_taxes'] = cls.get_other_taxes
         report_context['get_iibb'] = cls.get_iibb

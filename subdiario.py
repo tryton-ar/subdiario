@@ -121,7 +121,7 @@ class Subdiario(object):
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
             if invoice_tax.tax.group.afip_kind not in (
-                    'gravado', 'provincial'):
+                    'gravado', 'no_gravado', 'exento', 'provincial'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency != invoice.company.currency:
                     amount += cls.get_secondary_amount(invoice, tax_amount)
@@ -269,18 +269,27 @@ class Subdiario(object):
     def get_gravado(cls, lines):
         amount = Decimal('0')
         for line in lines:
-            if line.invoice_taxes:
-                line_amount = line.amount
-                amount = line_amount + amount
+            for tax in line.taxes:
+                if tax.group.afip_kind == 'gravado':
+                    amount += line.amount
         return amount
 
     @classmethod
     def get_no_gravado(cls, lines):
         amount = Decimal('0')
         for line in lines:
-            if line.invoice_taxes == ():
-                line_amount = line.amount
-                amount = line_amount + amount
+            for tax in line.taxes:
+                if tax.group.afip_kind == 'no_gravado':
+                    amount += line.amount
+        return amount
+
+    @classmethod
+    def get_exento(cls, lines):
+        amount = Decimal('0')
+        for line in lines:
+            for tax in line.taxes:
+                if tax.group.afip_kind == 'exento':
+                    amount += line.amount
         return amount
 
     @classmethod
