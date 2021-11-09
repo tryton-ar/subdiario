@@ -120,8 +120,7 @@ class SubdiarioPurchaseReport(Report, Subdiario):
         clause = [
             ('company', '=', data['company']),
             ('type', '=', 'in'),
-            ['OR', ('state', 'in', ['posted', 'paid']),
-                [('state', '=', 'cancel'), ('number', '!=', None)]],
+            ('state', 'in', ['posted', 'paid']),
             ]
         if data['date'] == 'post_date':
             clause.extend([
@@ -297,7 +296,7 @@ class SubdiarioSaleReport(Report, Subdiario):
             ('type', '=', 'out'),
             ('pos', 'in', data['pos']),
             ['OR', ('state', 'in', ['posted', 'paid']),
-                [('state', '=', 'cancel'), ('number', '!=', None)]],
+                [('state', '=', 'cancelled'), ('number', '!=', None)]],
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
             ], order=[
@@ -411,7 +410,7 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
             ('type', '=', 'out'),
             ('pos', 'in', data['pos']),
             ['OR', ('state', 'in', ['posted', 'paid']),
-                [('state', '=', 'cancel'), ('number', '!=', None)]],
+                [('state', '=', 'cancelled'), ('number', '!=', None)]],
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
             ], order=[
@@ -479,7 +478,7 @@ class SubdiarioSaleSubdivisionReport(Report, Subdiario):
             ('type', '=', 'out'),
             ('pos', 'in', data['pos']),
             ['OR', ('state', 'in', ['posted', 'paid']),
-                [('state', '=', 'cancel'), ('number', '!=', None)]],
+                [('state', '=', 'cancelled'), ('number', '!=', None)]],
             ('move.date', '>=', data['from_date']),
             ('move.date', '<=', data['to_date']),
             ], order=[
