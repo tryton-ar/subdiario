@@ -359,11 +359,22 @@ class SubdiarioPurchase(Wizard):
     start = StateView('subdiario.purchase.start',
         'subdiario.purchase_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
-            Button('OK', 'print_', 'tryton-print', True),
+            Button('Print Spreadsheet', 'print_', 'tryton-print', True),
+            Button('Print PDF', 'print_pdf', 'tryton-print'),
             ])
     print_ = StateReport('subdiario.purchase_report')
+    print_pdf = StateReport('subdiario.purchase_report_pdf')
 
     def do_print_(self, action):
+        data = {
+            'company': self.start.company.id,
+            'from_date': self.start.from_date,
+            'to_date': self.start.to_date,
+            'date': self.start.date,
+            }
+        return action, data
+
+    def do_print_pdf(self, action):
         data = {
             'company': self.start.company.id,
             'from_date': self.start.from_date,
@@ -488,6 +499,11 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             dict(Invoice._fields['tipo_comprobante'].selection)[tipo_cpte])
 
 
+class SubdiarioPurchasePDFReport(SubdiarioPurchaseReport):
+    'Subdiario de Compras'
+    __name__ = 'subdiario.purchase_report_pdf'
+
+
 class SubdiarioSaleStart(ModelView):
     'Subdiario de Ventas'
     __name__ = 'subdiario.sale.start'
@@ -531,11 +547,22 @@ class SubdiarioSale(Wizard):
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
-            Button('OK', 'print_', 'tryton-print', True),
+            Button('Print Spreadsheet', 'print_', 'tryton-print', True),
+            Button('Print PDF', 'print_pdf', 'tryton-print'),
             ])
     print_ = StateReport('subdiario.sale_report')
+    print_pdf = StateReport('subdiario.sale_report_pdf')
 
     def do_print_(self, action):
+        data = {
+            'company': self.start.company.id,
+            'from_date': self.start.from_date,
+            'to_date': self.start.to_date,
+            'pos': [p.id for p in self.start.pos],
+            }
+        return action, data
+
+    def do_print_pdf(self, action):
         data = {
             'company': self.start.company.id,
             'from_date': self.start.from_date,
@@ -651,6 +678,11 @@ class SubdiarioSaleReport(Report, Subdiario):
         return report_context
 
 
+class SubdiarioSalePDFReport(SubdiarioSaleReport):
+    'Subdiario de Ventas'
+    __name__ = 'subdiario.sale_report_pdf'
+
+
 class SubdiarioSaleType(Wizard):
     'Subdiario de Ventas por tipo de comprobante'
     __name__ = 'subdiario.sale.type'
@@ -658,7 +690,7 @@ class SubdiarioSaleType(Wizard):
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
-            Button('OK', 'print_', 'tryton-print', True),
+            Button('Print Spreadsheet', 'print_', 'tryton-print', True),
             ])
     print_ = StateReport('subdiario.sale_type_report')
 
@@ -709,13 +741,13 @@ class SubdiarioSaleTypeReport(Report, Subdiario):
         report_context['to_date'] = data['to_date']
         report_context['tipos_cptes'] = pos_sequences
         report_context['invoices'] = invoices
+        report_context['format_ci'] = cls.format_ci
         report_context['get_iva'] = cls.get_iva
         report_context['get_iibb'] = cls.get_iibb
         report_context['get_iva_condition'] = cls.get_iva_condition
         report_context['get_party_tax_identifier'] = (
             cls.get_party_tax_identifier)
         report_context['get_amount'] = cls.get_amount
-        report_context['format_ci'] = cls.format_ci
         return report_context
 
 
@@ -726,7 +758,7 @@ class SubdiarioSaleSubdivision(Wizard):
     start = StateView('subdiario.sale.start',
         'subdiario.sale_start_view_form', [
             Button('Cancel', 'end', 'tryton-cancel'),
-            Button('OK', 'print_', 'tryton-print', True),
+            Button('Print Spreadsheet', 'print_', 'tryton-print', True),
             ])
     print_ = StateReport('subdiario.sale_subdivision_report')
 

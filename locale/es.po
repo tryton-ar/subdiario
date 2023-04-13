@@ -50,7 +50,15 @@ msgctxt "model:ir.action,name:report_subdiario_purchase"
 msgid "Subdiario de Compras"
 msgstr ""
 
+msgctxt "model:ir.action,name:report_subdiario_purchase_pdf"
+msgid "Subdiario de Compras"
+msgstr ""
+
 msgctxt "model:ir.action,name:report_subdiario_sale"
+msgid "Subdiario de Ventas"
+msgstr ""
+
+msgctxt "model:ir.action,name:report_subdiario_sale_pdf"
 msgid "Subdiario de Ventas"
 msgstr ""
 
@@ -111,8 +119,8 @@ msgid "Subdiario de Ventas"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "$"
-msgstr ""
+msgid "%"
+msgstr "%"
 
 msgctxt "report:subdiario.purchase_report:"
 msgid "("
@@ -147,15 +155,19 @@ msgid "00:00:00"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid ":"
-msgstr ":"
-
-msgctxt "report:subdiario.purchase_report:"
-msgid "???"
+msgid "10,50 %"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "COMPRAS"
+msgid "21,00 %"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
+msgid "27,00 %"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
+msgid "???"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
@@ -163,11 +175,23 @@ msgid "CUIT"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
+msgid "Compras"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
 msgid "Comprobante"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
+msgid "Conc. No"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
 msgid "Concepto"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
+msgid "Exentas"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
@@ -179,35 +203,39 @@ msgid "Gravado"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "IVA 10,5%"
+msgid "Gravados"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "IVA 21%"
+msgid "IIBB"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "IVA 27%"
+msgid "IVA"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Jurisdicción PERCEPCION IIBB"
+msgid "Inscriptos"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "No gravado"
+msgid "Neto"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Número"
+msgid "No"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "OTROS IMPUESTOS"
+msgid "Op."
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "PERCEPCION IIBB"
+msgid "Otras"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
+msgid "Percepciones"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
@@ -219,35 +247,27 @@ msgid "Razón Social"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "TOTAL"
+msgid "Total"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Total Neto"
+msgid "Totales por Categoría IVA"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Total percibido"
+msgid "Totales por Categoría y Alícuota"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Totales por Provincia e impuesto"
+msgid "Totales por Impuesto"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Totales por categoría IVA"
+msgid "Totales por Provincia e Impuesto"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "Totales por categoría y alícuotas"
-msgstr ""
-
-msgctxt "report:subdiario.purchase_report:"
-msgid "Totales por impuesto"
-msgstr ""
-
-msgctxt "report:subdiario.purchase_report:"
-msgid "for each='invoice in invoices'"
+msgid "for each=\"invoice in invoices\""
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
@@ -271,9 +291,11 @@ msgid "for each='tax in taxes'"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid ""
-"format_date(from_date, user.language) + ' - ' + format_date(to_date, "
-"user.language)"
+msgid "format_ci(iva_condition)"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
+msgid "format_date(from_date, user.language)"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
@@ -286,6 +308,10 @@ msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
 msgid "get_concepto(invoice.lines)"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report:"
+msgid "get_exento(invoice.lines)"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
@@ -350,10 +376,6 @@ msgid "get_sum_percibido_by_tax_and_subdivision(tax, subdivision, invoices)"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "get_zona_iibb(invoice)"
-msgstr ""
-
-msgctxt "report:subdiario.purchase_report:"
 msgid "invoice.party.name"
 msgstr ""
 
@@ -374,14 +396,6 @@ msgid "invoice.total_amount"
 msgstr ""
 
 msgctxt "report:subdiario.purchase_report:"
-msgid "iva_condition"
-msgstr ""
-
-msgctxt "report:subdiario.purchase_report:"
-msgid "iva_condition + ' ' + tax.name"
-msgstr ""
-
-msgctxt "report:subdiario.purchase_report:"
 msgid "subdivision.name"
 msgstr ""
 
@@ -393,13 +407,93 @@ msgctxt "report:subdiario.purchase_report:"
 msgid "total_amount"
 msgstr ""
 
-msgctxt "report:subdiario.purchase_report:"
-msgid "€"
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "-"
+msgstr "-"
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "/"
+msgstr "/"
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "10,5%"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "21%"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "27%"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "CUIT"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Compras"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Comprobante"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Conc. No Gravados"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Concepto"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Fecha"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "IIBB"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "IVA"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Neto Gravado"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "No Inscriptos"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Op. Exentas"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Otras"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Percepciones"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Página"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Razón Social"
+msgstr ""
+
+msgctxt "report:subdiario.purchase_report_pdf:"
+msgid "Total"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "$"
-msgstr ""
+msgid "%"
+msgstr "%"
 
 msgctxt "report:subdiario.sale_report:"
 msgid "("
@@ -434,23 +528,19 @@ msgid "00:00:00"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid ":"
-msgstr ":"
+msgid "10,50 %"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "21,00 %"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "27,00 %"
+msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
 msgid "???"
-msgstr ""
-
-msgctxt "report:subdiario.sale_report:"
-msgid "CI"
-msgstr ""
-
-msgctxt "report:subdiario.sale_report:"
-msgid "CLIENTE"
-msgstr ""
-
-msgctxt "report:subdiario.sale_report:"
-msgid "COMPROBANTE"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -458,7 +548,31 @@ msgid "CUIT"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "FECHA"
+msgid "Comprobante"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "Conc. No"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "Cond."
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "Exentas"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "Fecha"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "Gravado"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "Gravados"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -466,23 +580,23 @@ msgid "IIBB"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "IVA 10,5%"
+msgid "IVA"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "IVA 21%"
+msgid "Neto"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "IVA 27%"
+msgid "Op."
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "NETO"
+msgid "Otras"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "NUMERO"
+msgid "Percepciones"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -490,31 +604,31 @@ msgid "Página"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "TOTAL"
+msgid "Razón Social"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "Total Neto"
+msgid "Total"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "Total percibido"
+msgid "Totales por Categoría IVA"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "Totales por categoría IVA"
+msgid "Totales por Categoría y Alícuota"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "Totales por categoría y alícuotas"
+msgid "Totales por Impuesto"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "Totales por impuesto"
+msgid "Ventas"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "for each='invoice in invoices'"
+msgid "for each=\"invoice in invoices\""
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -534,7 +648,7 @@ msgid "format_ci(iva_condition)"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "format_ci(iva_condition) + ' ' + tax.name"
+msgid "format_date(from_date, user.language)"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -542,11 +656,19 @@ msgid "format_date(invoice.invoice_date, invoice.company.party.lang)"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
+msgid "format_date(to_date, user.language)"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
 msgid "get_amount(invoice, 'total_amount')"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
-msgid "get_amount(invoice, 'untaxed_amount')"
+msgid "get_exento(invoice.lines)"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "get_gravado(invoice.lines)"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -567,6 +689,14 @@ msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
 msgid "get_iva_condition(invoice)"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "get_no_gravado(invoice.lines)"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report:"
+msgid "get_other_taxes(invoice)"
 msgstr ""
 
 msgctxt "report:subdiario.sale_report:"
@@ -634,8 +764,84 @@ msgctxt "report:subdiario.sale_report:"
 msgid "totales_untaxed_amount"
 msgstr ""
 
-msgctxt "report:subdiario.sale_report:"
-msgid "€"
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "-"
+msgstr "-"
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "/"
+msgstr "/"
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "10,5%"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "21%"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "27%"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "CUIT"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Comprobante"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Conc. No Gravados"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Cond. IVA"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Fecha"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "IIBB"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "IVA"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Neto Gravado"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Op. Exentas"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Otras"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Percepciones"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Página"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Razón Social"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Total"
+msgstr ""
+
+msgctxt "report:subdiario.sale_report_pdf:"
+msgid "Ventas"
 msgstr ""
 
 msgctxt "report:subdiario.sale_subdivision_report:"
@@ -991,29 +1197,37 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 msgctxt "wizard_button:subdiario.purchase,start,print_:"
-msgid "OK"
-msgstr "Aceptar"
+msgid "Print Spreadsheet"
+msgstr "Imprimir Planilla"
+
+msgctxt "wizard_button:subdiario.purchase,start,print_pdf:"
+msgid "Print PDF"
+msgstr "Imprimir PDF"
 
 msgctxt "wizard_button:subdiario.sale,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
 msgctxt "wizard_button:subdiario.sale,start,print_:"
-msgid "OK"
-msgstr "Aceptar"
+msgid "Print Spreadsheet"
+msgstr "Imprimir Planilla"
+
+msgctxt "wizard_button:subdiario.sale,start,print_pdf:"
+msgid "Print PDF"
+msgstr "Imprimir PDF"
 
 msgctxt "wizard_button:subdiario.sale.subdivision,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
 msgctxt "wizard_button:subdiario.sale.subdivision,start,print_:"
-msgid "OK"
-msgstr "Aceptar"
+msgid "Print Spreadsheet"
+msgstr "Imprimir Planilla"
 
 msgctxt "wizard_button:subdiario.sale.type,start,end:"
 msgid "Cancel"
 msgstr "Cancelar"
 
 msgctxt "wizard_button:subdiario.sale.type,start,print_:"
-msgid "OK"
-msgstr "Aceptar"
+msgid "Print Spreadsheet"
+msgstr "Imprimir Planilla"

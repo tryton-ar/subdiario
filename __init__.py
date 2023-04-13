@@ -21,7 +21,9 @@ def register():
         module='subdiario', type_='wizard')
     Pool.register(
         subdiario.SubdiarioPurchaseReport,
+        subdiario.SubdiarioPurchasePDFReport,
         subdiario.SubdiarioSaleReport,
+        subdiario.SubdiarioSalePDFReport,
         subdiario.SubdiarioSaleTypeReport,
         subdiario.SubdiarioSaleSubdivisionReport,
         module='subdiario', type_='report')
