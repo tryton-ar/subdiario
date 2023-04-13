@@ -4,23 +4,24 @@
 
 from trytond.pool import Pool
 from . import invoice
+from . import subdiario
 
 
 def register():
     Pool.register(
         invoice.Invoice,
-        invoice.SubdiarioPurchaseStart,
-        invoice.SubdiarioSaleStart,
+        subdiario.SubdiarioPurchaseStart,
+        subdiario.SubdiarioSaleStart,
         module='subdiario', type_='model')
     Pool.register(
-        invoice.SubdiarioPurchase,
-        invoice.SubdiarioSale,
-        invoice.SubdiarioSaleType,
-        invoice.SubdiarioSaleSubdivision,
+        subdiario.SubdiarioPurchase,
+        subdiario.SubdiarioSale,
+        subdiario.SubdiarioSaleType,
+        subdiario.SubdiarioSaleSubdivision,
         module='subdiario', type_='wizard')
     Pool.register(
-        invoice.SubdiarioPurchaseReport,
-        invoice.SubdiarioSaleReport,
-        invoice.SubdiarioSaleTypeReport,
-        invoice.SubdiarioSaleSubdivisionReport,
+        subdiario.SubdiarioPurchaseReport,
+        subdiario.SubdiarioSaleReport,
+        subdiario.SubdiarioSaleTypeReport,
+        subdiario.SubdiarioSaleSubdivisionReport,
         module='subdiario', type_='report')
