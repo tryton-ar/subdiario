@@ -16,6 +16,12 @@
             <field name="report">subdiario/report/purchase.fods</field>
             <field name="template_extension">ods</field>
         </record>
+        <record model="ir.action.report" id="report_subdiario_purchase_pdf">
+            <field name="name">Subdiario de Compras</field>
+            <field name="report_name">subdiario.purchase_report_pdf</field>
+            <field name="report">subdiario/report/purchase.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
 
         <record model="ir.ui.view" id="purchase_start_view_form">
             <field name="model">subdiario.purchase.start</field>
@@ -40,6 +46,12 @@
             <field name="report_name">subdiario.sale_report</field>
             <field name="report">subdiario/report/sale.fods</field>
             <field name="template_extension">ods</field>
+        </record>
+        <record model="ir.action.report" id="report_subdiario_sale_pdf">
+            <field name="name">Subdiario de Ventas</field>
+            <field name="report_name">subdiario.sale_report_pdf</field>
+            <field name="report">subdiario/report/sale.fodt</field>
+            <field name="extension">pdf</field>
         </record>
 
         <record model="ir.ui.view" id="sale_start_view_form">
