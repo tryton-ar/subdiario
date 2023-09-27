@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:creation-date>2023-01-19T10:36:09.681445869</meta:creation-date><meta:editing-cycles>0</meta:editing-cycles><meta:editing-duration>P0D</meta:editing-duration><meta:generator>LibreOffice/6.0.7.3$Linux_X86_64 LibreOffice_project/00m0$Build-3</meta:generator><meta:document-statistic meta:table-count="1" meta:image-count="0" meta:object-count="0" meta:page-count="1" meta:paragraph-count="38" meta:word-count="77" meta:character-count="1229" meta:non-whitespace-character-count="1190"/></office:meta>
+ <office:meta><meta:creation-date>2023-01-19T10:36:09.681445869</meta:creation-date><meta:editing-cycles>0</meta:editing-cycles><meta:editing-duration>P0D</meta:editing-duration><meta:generator>LibreOffice/6.0.7.3$Linux_X86_64 LibreOffice_project/00m0$Build-3</meta:generator><meta:document-statistic meta:table-count="1" meta:image-count="0" meta:object-count="0" meta:page-count="1" meta:paragraph-count="48" meta:word-count="108" meta:character-count="1825" meta:non-whitespace-character-count="1765"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="ViewAreaTop" config:type="long">0</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
    <config:config-item config:name="ViewAreaWidth" config:type="long">34503</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">13760</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">14739</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">29824</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">6511</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">9246</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">1501</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
      <config:config-item config:name="VisibleTop" config:type="long">0</config:config-item>
      <config:config-item config:name="VisibleRight" config:type="long">34502</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">13758</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">14737</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -92,7 +92,7 @@
    <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
    <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">757180</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">1015287</config:config-item>
    <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
    <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
    <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
@@ -549,9 +549,17 @@
    <style:text-properties style:font-name="Liberation Sans" fo:font-size="6pt" officeooo:paragraph-rsid="000a4894" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
   </style:style>
   <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties style:font-name="Liberation Sans" fo:font-size="7pt" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
+   <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="6pt" officeooo:paragraph-rsid="000cfaea" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
   </style:style>
   <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="6pt" officeooo:paragraph-rsid="000dcbbd" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
+  </style:style>
+  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="7pt" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
+  </style:style>
+  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
    <style:text-properties style:font-name="Liberation Sans" fo:font-size="7pt" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
   </style:style>
@@ -737,7 +745,7 @@
       <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;invoice.party.name&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.E4" office:value-type="string">
-      <text:p text:style-name="P13"><text:placeholder text:placeholder-type="text">&lt;invoice.party.vat_number&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P13"><text:placeholder text:placeholder-type="text">&lt;get_party_tax_identifier(invoice)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.F4" office:value-type="string">
       <text:p text:style-name="P12"><text:placeholder text:placeholder-type="text">&lt;get_concepto(invoice.lines)&gt;</text:placeholder></text:p>
@@ -764,16 +772,16 @@
       <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(get_no_gravado(invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.N4" office:value-type="string">
-      <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(get_iibb(invoice), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(get_percep_iibb(invoice), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.O4" office:value-type="string">
-      <text:p text:style-name="P14"/>
+      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(get_percep_iva(invoice), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.P4" office:value-type="string">
-      <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(get_other_taxes(invoice), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(get_percep_otras(invoice), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.Q4" office:value-type="string">
-      <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(invoice.total_amount, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P14"><text:placeholder text:placeholder-type="text">&lt;format_number(get_amount(invoice, &apos;total_amount&apos;), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
@@ -831,55 +839,55 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Ventas.A6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.B6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.C6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.D6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.E6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.F6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.G6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P11"/>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.H6" office:value-type="string">
-      <text:p text:style-name="P16"/>
+      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(total_op_exentas, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.I6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P16"><text:placeholder text:placeholder-type="text">&lt;format_number(total_neto_gravado, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.J6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P16"><text:placeholder text:placeholder-type="text">&lt;format_number(total_iva_21, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.K6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P16"><text:placeholder text:placeholder-type="text">&lt;format_number(total_iva_105, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.L6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P16"><text:placeholder text:placeholder-type="text">&lt;format_number(total_iva_27, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.M6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(total_conc_no_gravados, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.N6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(total_percep_iibb, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.O6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(total_percep_iva, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.P6" office:value-type="string">
-      <text:p text:style-name="P17"/>
+      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(total_percep_otras, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.Q6" office:value-type="string">
-      <text:p text:style-name="P17"><text:placeholder text:placeholder-type="text">&lt;format_number(total_amount, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P16"><text:placeholder text:placeholder-type="text">&lt;format_number(total_total, company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
