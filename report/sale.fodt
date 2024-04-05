@@ -713,10 +713,10 @@
       <text:p text:style-name="P10"><text:placeholder text:placeholder-type="text">&lt;get_iva_condition(invoice)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.G4" office:value-type="string">
-      <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_exento(invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_exento(invoice, invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.H4" office:value-type="string">
-      <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_gravado(invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_gravado(invoice, invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.I4" office:value-type="string">
       <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_iva(invoice, &apos;0.21&apos;), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
@@ -728,7 +728,7 @@
       <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_iva(invoice, &apos;0.27&apos;), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.L4" office:value-type="string">
-      <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_no_gravado(invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
+      <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_no_gravado(invoice, invoice.lines), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Ventas.M4" office:value-type="string">
       <text:p text:style-name="P11"><text:placeholder text:placeholder-type="text">&lt;format_number(get_percep_iibb(invoice), company.party.lang, digits=2)&gt;</text:placeholder></text:p>
