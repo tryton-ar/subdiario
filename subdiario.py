@@ -33,6 +33,7 @@ class Subdiario(object):
         pool = Pool()
         Currency = pool.get('currency.currency')
 
+        ctz = Decimal(1)
         if invoice.pos and invoice.pos.pos_type == 'electronic':
             afip_tr, = [tr for tr in invoice.transactions
                 if tr.pyafipws_result == 'A']
@@ -51,30 +52,45 @@ class Subdiario(object):
         return amount
 
     @classmethod
-    def get_exento(cls, lines):
+    def get_exento(cls, invoice, lines):
         amount = Decimal('0')
         for line in lines:
             for tax in line.taxes:
                 if tax.group.afip_kind == 'exento':
                     amount += line.amount
+        if amount:
+            if invoice.currency != invoice.company.currency:
+                amount = cls.get_secondary_amount(invoice, amount)
+            else:
+                amount = invoice.currency.round(amount)
         return amount
 
     @classmethod
-    def get_gravado(cls, lines):
+    def get_gravado(cls, invoice, lines):
         amount = Decimal('0')
         for line in lines:
             for tax in line.taxes:
                 if tax.group.afip_kind == 'gravado':
                     amount += line.amount
+        if amount:
+            if invoice.currency != invoice.company.currency:
+                amount = cls.get_secondary_amount(invoice, amount)
+            else:
+                amount = invoice.currency.round(amount)
         return amount
 
     @classmethod
-    def get_no_gravado(cls, lines):
+    def get_no_gravado(cls, invoice, lines):
         amount = Decimal('0')
         for line in lines:
             for tax in line.taxes:
                 if tax.group.afip_kind == 'no_gravado':
                     amount += line.amount
+        if amount:
+            if invoice.currency != invoice.company.currency:
+                amount = cls.get_secondary_amount(invoice, amount)
+            else:
+                amount = invoice.currency.round(amount)
         return amount
 
     @classmethod
@@ -484,9 +500,9 @@ class SubdiarioPurchaseReport(Report, Subdiario):
             ]
 
         for invoice in invoices:
-            total_op_exentas += cls.get_exento(invoice.lines)
-            total_neto_gravado += cls.get_gravado(invoice.lines)
-            total_conc_no_gravados += cls.get_no_gravado(invoice.lines)
+            total_op_exentas += cls.get_exento(invoice, invoice.lines)
+            total_neto_gravado += cls.get_gravado(invoice, invoice.lines)
+            total_conc_no_gravados += cls.get_no_gravado(invoice, invoice.lines)
             total_iva_21 += cls.get_iva(invoice, '0.21')
             total_iva_105 += cls.get_iva(invoice, '0.105')
             total_iva_27 += cls.get_iva(invoice, '0.27')
@@ -691,9 +707,9 @@ class SubdiarioSaleReport(Report, Subdiario):
             ]
 
         for invoice in invoices:
-            total_op_exentas += cls.get_exento(invoice.lines)
-            total_neto_gravado += cls.get_gravado(invoice.lines)
-            total_conc_no_gravados += cls.get_no_gravado(invoice.lines)
+            total_op_exentas += cls.get_exento(invoice, invoice.lines)
+            total_neto_gravado += cls.get_gravado(invoice, invoice.lines)
+            total_conc_no_gravados += cls.get_no_gravado(invoice, invoice.lines)
             total_iva_21 += cls.get_iva(invoice, '0.21')
             total_iva_105 += cls.get_iva(invoice, '0.105')
             total_iva_27 += cls.get_iva(invoice, '0.27')

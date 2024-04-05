@@ -535,9 +535,9 @@
      <table:table-cell table:style-name="ce31" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_concepto(invoice.lines)" xlink:type="simple">get_concepto(invoice.lines)</text:a></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce32"/>
-     <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_exento(invoice.lines)" xlink:type="simple">get_exento(invoice.lines)</text:a></text:p>
+     <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_exento(invoice, invoice.lines)" xlink:type="simple">get_exento(invoice, invoice.lines)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_gravado(invoice.lines)" xlink:type="simple">get_gravado(invoice.lines)</text:a></text:p>
+     <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_gravado(invoice, invoice.lines)" xlink:type="simple">get_gravado(invoice, invoice.lines)</text:a></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.21&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.21&apos;)</text:a></text:p>
      </table:table-cell>
@@ -545,7 +545,7 @@
      </table:table-cell>
      <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.27&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.27&apos;)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_no_gravado(invoice.lines)" xlink:type="simple">get_no_gravado(invoice.lines)</text:a></text:p>
+     <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_no_gravado(invoice, invoice.lines)" xlink:type="simple">get_no_gravado(invoice, invoice.lines)</text:a></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce32" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_percep_iibb(invoice)" xlink:type="simple">get_percep_iibb(invoice)</text:a></text:p>
      </table:table-cell>

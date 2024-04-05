@@ -574,9 +574,9 @@
      </table:table-cell>
      <table:table-cell table:style-name="ce46" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_party_tax_identifier(invoice)" xlink:type="simple">get_party_tax_identifier(invoice)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce51" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_exento(invoice.lines)" xlink:type="simple">get_exento(invoice.lines)</text:a></text:p>
+     <table:table-cell table:style-name="ce51" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_exento(invoice, invoice.lines)" xlink:type="simple">get_exento(invoice, invoice.lines)</text:a></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce51" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_gravado(invoice.lines)" xlink:type="simple">get_gravado(invoice.lines)</text:a></text:p>
+     <table:table-cell table:style-name="ce51" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_gravado(invoice, invoice.lines)" xlink:type="simple">get_gravado(invoice, invoice.lines)</text:a></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce53" office:value-type="string" calcext:value-type="string"><text:p><text:a xlink:href="relatorio://get_iva(invoice,%20&apos;0.21&apos;)" xlink:type="simple">get_iva(invoice, &apos;0.21&apos;)</text:a></text:p>
      </table:table-cell>
