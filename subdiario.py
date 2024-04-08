@@ -111,7 +111,8 @@ class Subdiario(object):
     def get_percep_iibb(cls, invoice):
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group.afip_kind == 'provincial':
+            if (invoice_tax.tax.group.afip_kind == 'provincial' and
+                    invoice_tax.tax.perception_tax_code == 'iibb'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency != invoice.company.currency:
                     amount += cls.get_secondary_amount(invoice, tax_amount)
@@ -123,7 +124,8 @@ class Subdiario(object):
     def get_percep_iva(cls, invoice):
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group.afip_kind == 'nacional':
+            if (invoice_tax.tax.group.afip_kind == 'nacional' and
+                    invoice_tax.tax.perception_tax_code == 'iva'):
                 tax_amount = invoice_tax.amount
                 if invoice.currency != invoice.company.currency:
                     amount += cls.get_secondary_amount(invoice, tax_amount)
@@ -135,14 +137,20 @@ class Subdiario(object):
     def get_percep_otras(cls, invoice):
         amount = Decimal('0')
         for invoice_tax in invoice.taxes:
-            if invoice_tax.tax.group.afip_kind not in (
-                    'gravado', 'no_gravado', 'exento',
-                    'provincial', 'nacional'):
-                tax_amount = invoice_tax.amount
-                if invoice.currency != invoice.company.currency:
-                    amount += cls.get_secondary_amount(invoice, tax_amount)
-                else:
-                    amount += invoice.currency.round(tax_amount)
+            if invoice_tax.tax.group.afip_kind in (
+                    'gravado', 'no_gravado', 'exento'):
+                continue
+            if (invoice_tax.tax.group.afip_kind == 'provincial' and
+                    invoice_tax.tax.perception_tax_code == 'iibb'):
+                continue
+            if (invoice_tax.tax.group.afip_kind == 'nacional' and
+                    invoice_tax.tax.perception_tax_code == 'iva'):
+                continue
+            tax_amount = invoice_tax.amount
+            if invoice.currency != invoice.company.currency:
+                amount += cls.get_secondary_amount(invoice, tax_amount)
+            else:
+                amount += invoice.currency.round(tax_amount)
         return amount
 
     @classmethod
