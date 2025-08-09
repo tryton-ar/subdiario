@@ -7,15 +7,12 @@ import io
 import os
 import re
 from configparser import ConfigParser
-
 from setuptools import find_packages, setup
 
 MODULE = 'subdiario'
 PREFIX = 'trytonar'
 MODULE2PREFIX = {
-    'party_ar': 'trytonar',
-    'account_invoice_ar': 'trytonar',
-    'citi_afip': 'trytonar',
+    'account_report_ar': 'trytonar',
     }
 
 
@@ -30,13 +27,9 @@ def read(fname):
 
 def get_require_version(name):
     if name in LINKS:
-        return '%s @ %s' % (name, LINKS[name])
-    if minor_version % 2:
-        require = '%s >= %s.%s.dev0, < %s.%s'
-    else:
-        require = '%s >= %s.%s, < %s.%s'
-    require %= (
-        name, major_version, minor_version,
+        return ''  # '%s @ %s' % (name, LINKS[name])
+    require = '%s >= %s.%s, < %s.%s'
+    require %= (name, major_version, minor_version,
         major_version, minor_version + 1)
     return require
 
@@ -57,26 +50,22 @@ download_url = 'https://github.com/tryton-ar/%s/tree/%s.%s' % (
     MODULE, major_version, minor_version)
 
 LINKS = {
-    'trytonar_party_ar': ('git+https://github.com/tryton-ar/'
-        'party_ar.git@%s.%s#egg=trytonar-party-ar-%s.%s' %
+    'trytonar_account_report_ar': ('git+https://github.com/tryton-ar/'
+        'account_report_ar.git@%s.%s#egg=trytonar_account_report_ar-%s.%s' %
         (major_version, minor_version, major_version, minor_version)),
-    'trytonar_account_invoice_ar': ('git+https://github.com/tryton-ar/'
-        'account_invoice_ar.git@%s.%s#egg=trytonar-account-invoice-ar-%s.%s' %
-        (major_version, minor_version, major_version, minor_version)),
-    'trytonar_citi_afip': ('git+https://github.com/tryton-ar/'
-        'citi_afip.git@%s.%s#egg=trytonar-citi-afip-%s.%s' %
-        (major_version, minor_version, major_version, minor_version)),
-}
+    }
 
 requires = []
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
         module_name = '%s_%s' % (MODULE2PREFIX.get(dep, 'trytond'), dep)
         requires.append(get_require_version(module_name))
-
 requires.append(get_require_version('trytond'))
 
 tests_require = [get_require_version('proteus')]
+for dep in info.get('extras_depend', []):
+    module_name = '%s_%s' % (MODULE2PREFIX.get(dep, 'trytond'), dep)
+    tests_require.append(get_require_version(module_name))
 
 setup(name='%s_%s' % (PREFIX, MODULE),
     version=version,

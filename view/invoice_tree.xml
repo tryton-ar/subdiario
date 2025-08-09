@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<data>
-    <xpath expr="/tree/field[@name='party']" position="after">
-        <field name="subdivision"/>
-    </xpath>
-</data>
